@@ -51,10 +51,13 @@ $ruta = str_replace($_SESSION['home'], '', $_SERVER['REQUEST_URI']);
 //Encamino cada ruta al controlador y acción correspondientes
 switch ($ruta) {
     //Front-end
-    case "":
+    case "":case "/mascotas":
+    controlador()->ListaMascotas();
+    break;
     case "/":
-        controlador()->principal();
+        controlador()->entrar();
         break;
     default:
-        controlador()->principal();
+        controlador()->entrar();
+
 }

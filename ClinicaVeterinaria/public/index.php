@@ -11,7 +11,7 @@ use App\Controller\AppController;
  * Asigno a sesión las rutas de las carpetas public y home, necesarias tanto para las rutas como para
  * poder enlazar imágenes y archivos css, js
  */
-$_SESSION['public'] = '/ejercicios/cms/public/';
+$_SESSION['public'] = '/ClinicaVeterinaria/public/';
 $_SESSION['home'] = $_SESSION['public'].'index.php/';
 
 //Defino y llamo a la función que autocargará las clases cuando se instancien
@@ -53,8 +53,8 @@ switch ($ruta) {
     //Front-end
     case "":
     case "/":
-        controlador()->index();
+        controlador()->principal();
         break;
     default:
-        controlador()->index();
+        controlador()->principal();
 }

@@ -1,96 +1,23 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Veterinaria</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
-    <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-        <div class="w3-quarter">
-            <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-            <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
-            <h3>Let Me Tell You About This Steak</h3>
-            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-            <h3>Cherries, interrupted</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-            <p>What else?</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-            <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-
-    <!-- Second Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center">
-        <div class="w3-quarter">
-            <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-            <h3>All I Need Is a Popsicle</h3>
-            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-            <h3>Salmon For Your Skin</h3>
-            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-            <h3>The Perfect Sandwich, A Real Classic</h3>
-            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-        <div class="w3-quarter">
-            <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-            <h3>Le French</h3>
-            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-        </div>
-    </div>
-
-    <!-- Pagination -->
-    <div class="w3-center w3-padding-32">
-        <div class="w3-bar">
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-        </div>
-    </div>
-
-
-
-
-    <!-- End page content -->
 </div>
-
-<script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-    }
-</script>
 
 </body>
 </html>

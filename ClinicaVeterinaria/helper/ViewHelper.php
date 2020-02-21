@@ -3,7 +3,8 @@ namespace App\Helper;
 
 class ViewHelper
 {
-function composicion($carpeta,$archivo,$datos=null){
+
+function composicion($carpeta,$archivo){
     //CABECERA
     require ("../view/$carpeta/partials/header.php");
 
@@ -13,4 +14,5 @@ function composicion($carpeta,$archivo,$datos=null){
     //FOOTER
     require ("../view/$carpeta/partials/footer.php");
 }
+
 }

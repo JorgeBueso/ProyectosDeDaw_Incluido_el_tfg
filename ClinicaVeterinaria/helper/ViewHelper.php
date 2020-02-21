@@ -5,11 +5,12 @@ class ViewHelper
 {
 function composicion($carpeta,$archivo,$datos=null){
     //CABECERA
-    require ("../view/app/partials/header.php");
+    require ("../view/$carpeta/partials/header.php");
+
     //CONTENIDO
-    require ("../view/app/$archivo.php");
+    require ("../view/$carpeta/$archivo.php");
 
     //FOOTER
-    require ("../view/app/partials/footer.php");
+    require ("../view/$carpeta/partials/footer.php");
 }
 }

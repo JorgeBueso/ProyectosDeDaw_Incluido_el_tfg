@@ -55,9 +55,9 @@ switch ($ruta) {
     controlador()->ListaMascotas();
     break;
     case "/":
-        controlador()->entrar();
+        controlador()->ListaMascotas();
         break;
     default:
-        controlador()->entrar();
+        controlador()->ListaMascotas();
 
 }

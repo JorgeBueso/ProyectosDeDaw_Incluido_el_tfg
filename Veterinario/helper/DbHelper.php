@@ -12,8 +12,11 @@ class DbHelper {
         $opciones = [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"];
         try {
             $this->db = new \PDO(
-                'mysql:host=localhost;dbname=bdVeterinaria',
-                'usuario-dbVeterinaria',
+//                'mysql:host=localhost;dbname=bdVeterinaria',
+//                'usuario-dbVeterinaria',
+//                '1234',
+                'mysql:host=localhost;dbname=db_pacman',
+                'user-pacman',
                 '1234',
                 $opciones);
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

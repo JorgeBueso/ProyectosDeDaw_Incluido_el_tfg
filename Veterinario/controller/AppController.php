@@ -1,7 +1,8 @@
 <?php
+
 namespace App\Controller;
 
-use App\Model\Usuario;
+//use App\Model\Usuario;
 use App\Model\Mascota;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
@@ -36,7 +37,7 @@ class AppController
         }
 
         //Llamo a la vista
-        $this->view->vista("app", "index", $mascotas);
+        $this->view->vista("app", "mascotas", $mascotas);
     }
 
 
@@ -52,7 +53,7 @@ class AppController
         }
 
         //Llamo a la vista
-        $this->view->vista("app", "noticias", $mascotas);
+        $this->view->vista("app", "mascotas", $mascotas);
 
     }
 

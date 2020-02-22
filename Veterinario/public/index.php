@@ -7,7 +7,6 @@ session_start();
 
 //Incluyo los controladores que voy a utilizar para que seran cargados por Autoload
 use App\Controller\AppController;
-use App\Controller\NoticiaController;
 use App\Controller\UsuarioController;
 
 /*
@@ -83,42 +82,13 @@ switch ($ruta){
     case "admin/usuarios":
         controlador("usuarios")->index();
         break;
-    case "admin/usuarios/crear":
-        controlador("usuarios")->crear();
-        break;
-    case (strpos($ruta,"admin/usuarios/editar/") === 0):
-        controlador("usuarios")->editar(str_replace("admin/usuarios/editar/","",$ruta));
-        break;
-    case (strpos($ruta,"admin/usuarios/activar/") === 0):
-        controlador("usuarios")->activar(str_replace("admin/usuarios/activar/","",$ruta));
-        break;
-    case (strpos($ruta,"admin/usuarios/borrar/") === 0):
-        controlador("usuarios")->borrar(str_replace("admin/usuarios/borrar/","",$ruta));
-        break;
-    case "admin/mascotas":
-        controlador("mascotas")->index();
-        break;
-    case "admin/mascotas/crear":
-        controlador("mascotas")->crear();
-        break;
-    case (strpos($ruta,"admin/mascotas/editar/") === 0):
-        controlador("mascotas")->editar(str_replace("admin/mascotas/editar/","",$ruta));
-        break;
-    case (strpos($ruta,"admin/mascotas/activar/") === 0):
-        controlador("mascotas")->activar(str_replace("admin/mascotas/activar/","",$ruta));
-        break;
-    case (strpos($ruta,"admin/mascotas/home/") === 0):
-        controlador("mascotas")->home(str_replace("admin/mascotas/home/","",$ruta));
-        break;
-    case (strpos($ruta,"admin/mascotas/borrar/") === 0):
-        controlador("mascotas")->borrar(str_replace("admin/mascotas/borrar/","",$ruta));
-        break;
+
     case (strpos($ruta,"admin/") === 0):
         controlador("usuarios")->entrar();
         break;
 
     //Resto de rutas
     default:
-        controlador()->index();
+        controlador("usuarios")->entrar();
 
 }

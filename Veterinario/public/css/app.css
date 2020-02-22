@@ -1,0 +1,16 @@
+body{
+
+}
+
+nav img{
+    width:5rem;
+    height:5rem;
+
+}
+.card{
+    margin: auto;
+    width: 10rem;
+}
+.card img{
+    width: 10rem;
+}

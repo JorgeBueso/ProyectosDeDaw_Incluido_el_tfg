@@ -6,6 +6,7 @@ session_start();
 
 //Incluyo los controladores que voy a utilizar para que seran cargados por Autoload
 use App\Controller\AppController;
+use App\Controller\UsuarioController;
 
 /*
  * Asigno a sesión las rutas de las carpetas public y home, necesarias tanto para las rutas como para
@@ -42,22 +43,24 @@ function controlador($nombre = null)
     switch ($nombre) {
         default:
             return new AppController;
+        case "usuarios": return new UsuarioController;
+
     }
 }
 
-//Quito la ruta de la home a la que me están pidiendo
+//Quito la ruta de la home por la que me están pidiendo
 $ruta = str_replace($_SESSION['home'], '', $_SERVER['REQUEST_URI']);
 
 //Encamino cada ruta al controlador y acción correspondientes
 switch ($ruta) {
     //Front-end
-    case "":case "/mascotas":
-    controlador()->ListaMascotas();
-    break;
+    case "admin/entrar":
+        controlador("usuarios")->entrar();
+        break;
     case "/":
         controlador()->ListaMascotas();
         break;
     default:
-        controlador()->ListaMascotas();
+        controlador("usuarios")->entrar();
 
 }

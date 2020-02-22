@@ -1,9 +1,7 @@
 <?php
 
 
-namespace App\Helper;
-
-
+namespace App\helper;
 class DbHelper
 {
     var $db;
@@ -20,6 +18,7 @@ echo ("DbHelper");
                 $opciones);
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
+            echo("Falló la conexión:");
             echo 'Falló la conexión: ' . $e->getMessage();
         }
     }

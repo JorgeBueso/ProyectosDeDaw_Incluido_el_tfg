@@ -14,8 +14,9 @@ echo("ViewHelper");
     echo($archivo);
 
     //CONTENIDO
-    require ("/view/$carpeta/$archivo.php");
+    require ("../view/$carpeta/$archivo.php");
     echo("ViewHelper CUERPO ");
+
     //FOOTER
     require ("../view/$carpeta/partials/footer.php");
     echo("ViewHelper PIE");

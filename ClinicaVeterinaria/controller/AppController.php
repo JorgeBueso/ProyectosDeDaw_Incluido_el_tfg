@@ -36,6 +36,7 @@ class AppController
         }
         echo("appCONTROLAER3333333333333333");
         $this->view->composicion("app", "mascotas",$mascotas);
-        echo("appCONTROLAER");
+        echo("appCONTROLAERComposición");
     }
+
 }

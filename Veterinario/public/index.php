@@ -89,6 +89,7 @@ switch ($ruta){
 
     //Resto de rutas
     default:
-        controlador("usuarios")->entrar();
+        controlador()-> listaMascotas();
+//        controlador("usuarios")->entrar();
 
 }

@@ -5,20 +5,17 @@ namespace App\Helper;
 class ViewHelper {
 
     function vista($carpeta,$archivo,$datos=null){
-
-echo($carpeta.' ');
+echo ($carpeta);
 echo($archivo);
         //Llamo a la cabecera
         require("../view/$carpeta/partials/header.php");
 
         //Llamo al contenido
         require ("../view/$carpeta/$archivo.php");
-        echo(' '.$carpeta);
-//        echo($archivo);
+
         //Llamo al pie
         require("../view/$carpeta/partials/footer.php");
-//        echo($carpeta);
-//        echo($archivo);
+
     }
 
     //SI TIENE PERMISO PASA SI NO SACARA UN MENSAJE Y LE REDIRECIONARA Y ME LLEVARA A LA PAGINA INDEX

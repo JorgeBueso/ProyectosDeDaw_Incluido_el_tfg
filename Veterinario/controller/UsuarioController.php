@@ -32,7 +32,7 @@ class UsuarioController
     }
 
     public function entrar(){
-        echo (" "."UserControllerEntrar1");
+//        echo (" "."UserControllerEntrar1");
         //Si ya está autenticado, le llevo a la página de inicio del panel
         if (isset($_SESSION['usuario'])){
             echo (" "."UserControllerEntrar2");
@@ -164,18 +164,18 @@ class UsuarioController
 //
 //    }
 //
-//    public function crear(){
-//
-//        //Permisos
-//        $this->view->permisos("usuarios");
-//
-//        //Creo un nuevo usuario vacío
-//        $usuario = new Usuario();
-//
-//        //Llamo a la ventana de edición
-//        $this->view->vista("admin","usuarios/editar", $usuario);
-//
-//    }
+    public function crear(){
+
+        //Permisos
+        $this->view->permisos("usuarios");
+
+        //Creo un nuevo usuario vacío
+        $usuario = new Usuario();
+
+        //Llamo a la ventana de edición
+        $this->view->vista("admin","usuarios/editar", $usuario);
+
+    }
 //
 //    public function editar($id){
 //

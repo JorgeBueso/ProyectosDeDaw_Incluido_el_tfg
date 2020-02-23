@@ -10,11 +10,10 @@ class Mascota
     var $id_mascota;
     var $nombre;
     var $nombre_propietario;
-    var $apellido_propietario;
-    var $dni_propietario;
-    var $nacimiento;
+    var $edad;
     var $especie;
     var $imagen;
+    var $telefono;
 
 
     function __construct($data=null){
@@ -22,10 +21,9 @@ class Mascota
         $this->id_mascota = ($data) ? $data->id_mascota : null;
         $this->nombre = ($data) ? $data->nombre : null;
         $this->nombre_propietario = ($data) ? $data->nombre_propietario : null;
-        $this->dni_propietario = ($data) ? $data->dni_propietario : null;
-        $this->apellido_propietario = ($data) ? $data->apellido_propietario : null;
-        $this->nacimiento = ($data) ? $data->nacimiento : null;
+        $this->edad = ($data) ? $data->edad : null;
         $this->especie = ($data) ? $data->especie : null;
         $this->imagen = ($data) ? $data->imagen : null;
+        $this->telefono = ($data) ? $data->telefono : null;
     }
 }

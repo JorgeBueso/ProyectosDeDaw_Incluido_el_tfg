@@ -26,15 +26,15 @@ class AppController
 
     //Pantalla principal, viendo todas las mascotas
     public function listaMascotas(){
-//
-//        //Consulta a la bbdd
-//        $rowset = $this->db->query("SELECT * FROM mascota ORDER BY id_mascota DESC");
-//
-//        //Asigno resultados a un array de instancias del modelo
-//        $mascotas = array();
-//        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
-//            array_push($mascotas,new Mascota($row));
-//        }
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM mascota ORDER BY id_mascota DESC");
+
+        //Asigno resultados a un array de instancias del modelo
+        $mascotas = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
+            array_push($mascotas,new Mascota($row));
+        }
 
         //Llamo a la vista
         $this->view->vista("app", "mascotas");

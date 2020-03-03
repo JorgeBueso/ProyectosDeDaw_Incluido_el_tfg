@@ -59,20 +59,20 @@ $ruta = str_replace($_SESSION['home'], '', $_SERVER['REQUEST_URI']);
 //Encamino cada ruta al controlador y acción correspondientes
 switch ($ruta){
 
-//    //Front-end
-//    case "":
-//    case "/":
-//        controlador()->index();
-//        break;
-//    case "acerca-de":
-//        controlador()->acercade();
-//        break;
-//    case "moviles":
-//        controlador()->moviles();
-//        break;
-//    case (strpos($ruta,"movil/") === 0):
-//        controlador()->movil(str_replace("movil/","",$ruta));
-//        break;
+    //Front-end
+    case "":
+    case "/":
+        controlador()->index();
+        break;
+    case "acerca-de":
+        controlador()->acercade();
+        break;
+    case "moviles":
+        controlador()->moviles();
+        break;
+    case (strpos($ruta,"movil/") === 0):
+        controlador()->movil(str_replace("movil/","",$ruta));
+        break;
 
      //Back-end
     case "admin":
@@ -121,6 +121,6 @@ switch ($ruta){
 
     //Resto de rutas
     default:
-//        controlador()->index();
-controlador("usuarios")->entrar();
+        controlador()->index();
+//controlador("usuarios")->entrar();
 }

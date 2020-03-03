@@ -1,7 +1,7 @@
 
 <div class="row" >
     <!--Nuevo-->
-    <article class="col s12 l6">
+    <article class="col col-xl">
         <div class="card horizontal admin">
             <div class="card-stacked">
                 <div class="card-content">
@@ -54,7 +54,7 @@
                         Esta acción no se puede deshacer.
                     </p>
                     <a href="<?php echo $_SESSION['home']."admin/usuarios/borrar/".$row->id ?>" title="Borrar">
-                        <button class="btn waves-effect waves-light" type="button">Borrar
+                        <button class="btn" type="button">Borrar
                             <i class="material-icons right">delete</i>
                         </button>
                     </a>

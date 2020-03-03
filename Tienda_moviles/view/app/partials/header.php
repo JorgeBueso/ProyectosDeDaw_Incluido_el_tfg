@@ -18,7 +18,7 @@
 
         <!--Logo-->
         <a href="<?php echo $_SESSION['home'] ?>" class="brand-logo" title="Inicio">
-            <img src="<?php echo $_SESSION['public'] ?>img/logo.png" alt="Logo Movil">
+            <img src="<?php echo $_SESSION['public'] ?>img/" alt="Logo Movil">
         </a>
 
         <!--Botón menú móviles-->

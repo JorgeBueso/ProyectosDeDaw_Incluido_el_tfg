@@ -4,6 +4,7 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+
 }
 
 /*REGISTRO*/
@@ -12,7 +13,7 @@ html {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #f39c12;
+    background: #2aaacf;
     position: relative;
     display: flex;
     justify-content: center;
@@ -22,7 +23,6 @@ html {
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
-
 }
 .brand_logo_container {
     position: absolute;
@@ -45,7 +45,7 @@ html {
 }
 .login_btn {
      width: 100%;
-     background: #c0392b !important;
+     background: #ff5252 !important;
      color: white !important;
  }
 .login_btn:focus {
@@ -56,7 +56,7 @@ html {
     padding: 0 2rem;
 }
 .input-group-text {
-    background: #c0392b !important;
+    background: #ff5252 !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
@@ -109,17 +109,23 @@ body section {
     float: left;
     width: 80%;
     height: 70%;
+
+}
+
+/*Editar usuario*/
+.RegistroUsuarios{
+    background-color: white;
 }
 
 
+
+/*footer*/
 footer{
-    padding: 0.75rem 1.25rem;
-    background-color: #515960;
-    border-top: 1px solid rgba(0, 0, 0, 0.6);
-    /*background-color: grey;*/
-    /*width: 100%;*/
-    /*text-align: left;*/
+    /*padding: 0.75rem 1.25rem;*/
+    border-top: 3px solid rgba(0, 0, 0, 0.6);
+    color: cornsilk;
 }
+
 
 
 /*Pantallas muy grandes  (desktops de más de 1200px de ancho)
@@ -165,13 +171,12 @@ No hace falta media-query porque será nuestro diseño por defecto*/
     header {
         width: 80%;
         height: 20%;
-        background-color: white;
         font-family: 'Liu Jian Mao Cao', cursive;
         padding-left: 25%;
         float: left;
     }
 
-    header img {
+    .brand_logo img {
         width: 10%;
         height: 20%;
     }

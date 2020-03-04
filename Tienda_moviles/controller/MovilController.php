@@ -134,8 +134,8 @@ class MovilController
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/noticias","green","La noticia se ha borrado correctamente$texto_imagen.") :
-            $this->view->redireccionConMensaje("admin/noticias","red","Hubo un error al guardar en la base de datos.");
+            $this->view->redireccionConMensaje("admin/moviles","green","La noticia se ha borrado correctamente$texto_imagen.") :
+            $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
 
     }
 

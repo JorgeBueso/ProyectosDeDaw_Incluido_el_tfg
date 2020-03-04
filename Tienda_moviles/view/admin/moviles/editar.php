@@ -8,7 +8,7 @@
 
 <!--//////////////////////////////////////////////////////////////-->
 <!--NUEVO MOVIL-->
-<div class="row" style="color: white">
+<div class="row" style="background-color: white">
     <?php $id = ($datos->id) ? $datos->id : "nuevo" ?>
     <form class="col s12" method="POST" enctype="multipart/form-data" action="<?php echo $_SESSION['home'] ?>admin/moviles/editar/<?php echo $id ?>">
         <div class="col m12 l6">
@@ -24,7 +24,7 @@
                 <div class="input-field col s12">
                     <input id="precio" type="text" placeholder="Precio(€)" name="precio" value="<?php echo $datos->precio ?>">
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col ">
                         <textarea id="texto" class="materialize-textarea" placeholder="Caracteristicas" name="texto"><?php echo $datos->caracteristicas ?></textarea>
 
                 </div>
@@ -46,15 +46,13 @@
             <?php } ?>
         </div>
 
-
-        <div class="row">
             <div class="input-field col s12">
                 <a href="<?php echo $_SESSION['home'] ?>admin/moviles" title="Volver">
-                    <button class="btn waves-effect waves-light" type="button">Volver
+                    <button class="btn btn-outline-secondary" type="button">Volver
                         <i class="material-icons right">replay</i>
                     </button>
                 </a>
-                <button class="btn waves-effect waves-light" type="submit" name="guardar">Guardar
+                <button class="btn btn-outline-primary" type="submit" name="guardar">Guardar
                     <i class="material-icons right">save</i>
                 </button>
             </div>

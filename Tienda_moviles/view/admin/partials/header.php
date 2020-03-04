@@ -19,9 +19,10 @@
 <nav>
     <div class="nav-wrapper">
         <!--Logo-->
-        <a href="<?php echo $_SESSION['home'] ?>admin" class="brand-logo" title="Inicio">
-            <img src="<?php echo $_SESSION['public'] ?>img" alt="Logo Moviles">
-        </a>
+
+            <img class="imagenHeader" src="<?php echo $_SESSION['public'] ?>img/movil.png" alt="logoMoviles">
+
+
 
         <?php if (isset($_SESSION['usuario'])){ ?>
 

@@ -4,16 +4,24 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
-
+    color: cornsilk;
+}
+nav img{
+    width:5rem;
+    height:5rem;
 }
 
+.imagenHeader{
+    width: 4rem;
+    height: 4rem;
+}
 /*REGISTRO*/
 .user_card {
     height: 400px;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #2aaacf;
+    background: #1e2123;
     position: relative;
     display: flex;
     justify-content: center;
@@ -76,6 +84,7 @@ html {
 
 /*!*ENCABEZADO*!*/
 nav .header{
+    height: 23%;
     width: 100%;
     float: left;
     background-color: #8E9CB2;

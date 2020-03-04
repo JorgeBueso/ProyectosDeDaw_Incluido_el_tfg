@@ -1,37 +1,37 @@
 <div class="row">
     <!--Nuevo-->
-    <article class="col s12 l6">
-        <div class="card horizontal admin">
+    <article class="col s12 l3">
+        <div class="card horizontal large">
             <div class="card-stacked">
                 <div class="card-content">
-                    <i class="grey-text material-icons medium">image</i>
+                    <span uk-icon="icon: phone; ratio: 10"></span>
                     <h4 class="grey-text">
                         nuevo movil
-                    </h4><br><br>
+                    </h4>
                 </div>
                 <div class="card-action">
                     <a href="<?php echo $_SESSION['home'] . "admin/moviles/crear" ?>" title="Añadir nueva noticia">
-                        <i class="material-icons">add_circle</i>
+                        <span uk-icon="icon: plus;"></span>
                     </a>
                 </div>
             </div>
         </div>
     </article>
     <?php foreach ($datos as $row) { ?>
-        <article class="col s12 l6">
-            <div class="card horizontal  sticky-action admin">
-                <div class="card-stacked">
+        <article class="col s12 l3">
+            <div class="card large">
                     <?php if ($row->imagen) { ?>
                         <div class="card-image">
-                            <img src="<?php echo $_SESSION['public'] . "img/" . $row->imagen ?>"
+                            <img style="width: 15rem" src="<?php echo $_SESSION['public'] . "img/" . $row->imagen ?>"
                                  alt="<?php echo $row->modelo ?>">
                         </div>
                     <?php } ?>
+                <div class="card-stacked">
                     <div class="card-content">
                         <?php if (!$row->imagen) { ?>
-                            <i class="grey-text material-icons medium">image</i>
+                            <i class="fas fa-file-image medium"></i>
                         <?php } ?>
-                        <h4>
+                        <h4 style="width: 42rem">
                             <?php echo $row->modelo ?>
                         </h4>
                         <strong>URL amigable:</strong> <?php echo $row->slug ?><br>

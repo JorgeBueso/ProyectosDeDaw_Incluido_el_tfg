@@ -36,12 +36,7 @@
                     <span></span>
                 </label>
             </p>
-<!--            <p>-->
-<!--                <label for="usuarios">-->
-<!--                    <input id="usuarios" name="usuarios" type="checkbox" --><?php //echo ($datos->usuarios == 1) ? "checked" : "" ?>
-<!--                    <span></span>-->
-<!--                </label>-->
-<!--            </p>-->
+
 
             <?php $clase = ($datos->id) ? "" : "hide" ?>
             <p class="<?php echo $clase ?>">

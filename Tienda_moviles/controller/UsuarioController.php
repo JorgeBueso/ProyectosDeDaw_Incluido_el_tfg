@@ -95,7 +95,7 @@ class UsuarioController
         unset($_SESSION['usuario']);
 
         //Redirección con mensaje
-        $this->view->redireccionConMensaje("admin","green","Te has desconectado con éxito.");
+        $this->view->redireccionConMensaje("admin","black","Te has desconectado con éxito.");
 
     }
 
@@ -136,7 +136,7 @@ class UsuarioController
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/usuarios","green","El usuario <strong>$usuario->usuario</strong> se ha desactivado correctamente.") :
+                $this->view->redireccionConMensaje("admin/usuarios","black","El usuario <strong>$usuario->usuario</strong> se ha desactivado correctamente.") :
                 $this->view->redireccionConMensaje("admin/usuarios","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -147,7 +147,7 @@ class UsuarioController
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/usuarios","green","El usuario <strong>$usuario->usuario</strong> se ha activado correctamente.") :
+                $this->view->redireccionConMensaje("admin/usuarios","black","El usuario <strong>$usuario->usuario</strong> se ha activado correctamente.") :
                 $this->view->redireccionConMensaje("admin/usuarios","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -163,7 +163,7 @@ class UsuarioController
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/usuarios","green","El usuario se ha borrado correctamente.") :
+            $this->view->redireccionConMensaje("admin/usuarios","black","El usuario se ha borrado correctamente.") :
             $this->view->redireccionConMensaje("admin/usuarios","red","Hubo un error al guardar en la base de datos.");
 
     }
@@ -205,7 +205,7 @@ class UsuarioController
                 $this->db->exec("INSERT INTO usuarios (usuario, clave, moviles, usuarios) VALUES ('$usuario','$clave_encriptada',$moviles,$usuarios)");
 
                 //Mensaje y redirección
-                $this->view->redireccionConMensaje("admin/usuarios","green","El usuario <strong>$usuario</strong> se creado correctamente.");
+                $this->view->redireccionConMensaje("admin/usuarios","black","El usuario <strong>$usuario</strong> se creado correctamente.");
             }
             else{
 
@@ -215,7 +215,7 @@ class UsuarioController
                     $this->db->exec("UPDATE usuarios SET usuario='$usuario',moviles=$moviles,usuarios=$usuarios WHERE id='$id'");
 
                 //Mensaje y redirección
-                $this->view->redireccionConMensaje("admin/usuarios","green","El usuario <strong>$usuario</strong> se actualizado correctamente.");
+                $this->view->redireccionConMensaje("admin/usuarios","black","El usuario <strong>$usuario</strong> se actualizado correctamente.");
             }
         }
 

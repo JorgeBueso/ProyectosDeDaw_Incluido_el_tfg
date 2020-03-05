@@ -1,3 +1,4 @@
+<div class="RegistroUsuarios">
 <h3>
     <?php if ($datos->id){ ?>
         <span>Editar <?php echo $datos->modelo ?></span>
@@ -8,7 +9,7 @@
 
 <!--//////////////////////////////////////////////////////////////-->
 <!--NUEVO MOVIL-->
-<div class="row" style="background-color: white">
+<div class="row" >
     <?php $id = ($datos->id) ? $datos->id : "nuevo" ?>
     <form class="col s12" method="POST" enctype="multipart/form-data" action="<?php echo $_SESSION['home'] ?>admin/moviles/editar/<?php echo $id ?>">
         <div class="col m12 l6">
@@ -24,18 +25,18 @@
                 <div class="input-field col s12">
                     <input id="precio" type="text" placeholder="Precio(€)" name="precio" value="<?php echo $datos->precio ?>">
                 </div>
-                <div class="input-field col ">
-                        <textarea id="texto" class="materialize-textarea" placeholder="Caracteristicas" name="texto"><?php echo $datos->caracteristicas ?></textarea>
 
-                </div>
+            </div>
+            <div class="input-field col ">
+                <textarea id="texto" class="materialize-textarea" placeholder="Caracteristicas" name="texto"><?php echo $datos->caracteristicas ?></textarea>
 
             </div>
         </div>
         <div class="col m12 l6 center-align">
             <div class="file-field input-field">
-                <div class="btn">
-                    <span>Imagen</span>
-                    <input type="file" name="imagen">
+                <div class="btn btn-outline-light">
+                    <span uk-icon="icon: image">IMAGEN </span>
+                    <input type="file" name="imagen" >
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
@@ -48,14 +49,15 @@
 
             <div class="input-field col s12">
                 <a href="<?php echo $_SESSION['home'] ?>admin/moviles" title="Volver">
-                    <button class="btn btn-outline-secondary" type="button">Volver
-                        <i class="material-icons right">replay</i>
+                    <button class="btn btn-outline-warning" type="button">Volver
+                        <span uk-icon="icon: reply ; color:yellow"></span>
                     </button>
                 </a>
-                <button class="btn btn-outline-primary" type="submit" name="guardar">Guardar
-                    <i class="material-icons right">save</i>
+                <button class="btn btn-outline-light" type="submit" name="guardar">Guardar
+<span uk-icon="icon: check "></span>
                 </button>
             </div>
         </div>
     </form>
+</div>
 </div>

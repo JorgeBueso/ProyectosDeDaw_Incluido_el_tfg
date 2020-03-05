@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/app.css">
-
 </head>
 
 <body>
@@ -18,11 +17,11 @@
 
         <!--Logo-->
         <a href="<?php echo $_SESSION['home'] ?>" class="brand-logo" title="Inicio">
-            <img src="<?php echo $_SESSION['public'] ?>img/" alt="Logo Movil">
+            <img class="imagenHeader" src="<?php echo $_SESSION['public'] ?>img/movil.png" alt="Logo Movil">
         </a>
 
         <!--Botón menú móviles-->
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><span uk-icon="icon: menu"></span></a>
 
         <!--Menú de navegación-->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -30,7 +29,7 @@
                 <a href="<?php echo $_SESSION['home'] ?>" title="Inicio">Inicio</a>
             </li>
             <li>
-                <a href="<?php echo $_SESSION['home'] ?>moviles" title="Noticias">Moviles</a>
+                <a href="<?php echo $_SESSION['home'] ?>moviles" title="Moviles">Moviles</a>
             </li>
 
             <li>

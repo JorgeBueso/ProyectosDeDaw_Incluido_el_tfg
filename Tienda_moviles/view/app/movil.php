@@ -1,6 +1,6 @@
 <div class="row">
     <article class="col s12">
-        <div class="card horizontal large noticia">
+        <div class="card horizontal large movil">
             <div class="card-image">
                 <img src="<?php echo $_SESSION['public']."img/".$datos->imagen ?>" alt="<?php echo $datos->modelo ?>">
             </div>

@@ -11,7 +11,10 @@ nav .header{
     background-color: #8E9CB2;
     font-family: 'Liu Jian Mao Cao', cursive;
 }
-
+.imagenHeader{
+    width: 4rem;
+    height: 4rem;
+}
 .navbar{
     margin-bottom: 0;
 }

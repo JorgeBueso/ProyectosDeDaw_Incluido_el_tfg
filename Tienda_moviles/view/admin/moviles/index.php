@@ -10,7 +10,7 @@
                     </h4>
                 </div>
                 <div class="card-action">
-                    <a href="<?php echo $_SESSION['home'] . "admin/moviles/crear" ?>" title="Añadir nueva noticia">
+                    <a href="<?php echo $_SESSION['home'] . "admin/moviles/crear" ?>" title="Añadir nuevo movil">
                         <span uk-icon="icon: plus;"></span>
                     </a>
                 </div>
@@ -22,16 +22,16 @@
             <div class="card large">
                     <?php if ($row->imagen) { ?>
                         <div class="card-image">
-                            <img style="width: 15rem" src="<?php echo $_SESSION['public'] . "img/" . $row->imagen ?>"
+                            <img  class="imagenMovilesAdmin"  src="<?php echo $_SESSION['public'] . "img/" . $row->imagen ?>"
                                  alt="<?php echo $row->modelo ?>">
                         </div>
                     <?php } ?>
                 <div class="card-stacked">
                     <div class="card-content">
                         <?php if (!$row->imagen) { ?>
-                            <i class="fas fa-file-image medium"></i>
+                            <span uk-icon="icon: phone; ratio:10"></span>
                         <?php } ?>
-                        <h4 style="width: 42rem">
+                        <h4 style="width: 10rem">
                             <?php echo $row->modelo ?>
                         </h4>
                         <strong>URL amigable:</strong> <?php echo $row->slug ?><br>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="card-action">
                         <a href="<?php echo $_SESSION['home'] . "admin/moviles/editar/" . $row->id ?>" title="Editar">
-                            <i class="material-icons">edit</i>
+                            <span uk-icon="icon: pencil;"></span>
                         </a>
                         <?php $title = ($row->activo == 1) ? "Desactivar" : "Activar" ?>
                         <?php $color = ($row->activo == 1) ? "green-text" : "red-text" ?>
@@ -56,7 +56,7 @@
                         </a>
                         <a  data-toggle="collapse" href="#collapseExample" role="button"
                            aria-expanded="false" aria-controls="collapseExample" title="Borrar">
-                            <i class="material-icons">delete</i>
+                            <span uk-icon="icon: trash;"></span>
                         </a>
                     </div>
                 </div>
@@ -67,11 +67,11 @@
                     <span class="card-title grey-text text-darken-4"><strong><?php echo $row->modelo ?></strong></span>
                     <p>
                         ¿Está seguro de que quiere borrar el movil?<br>
-                        Esta acción no se puede deshacer.Si no desea borrar el teléfono, vuelva a pulsar el botón
+                        Esta acción no se puede deshacer.Si no desea borrar el teléfono, vuelva a pulsar el dibuja de la papelera.
                     </p>
                     <a href="<?php echo $_SESSION['home'] . "admin/moviles/borrar/" . $row->id ?>" title="Borrar">
                         <button class="btn waves-effect waves-light" type="button">Borrar
-                            <i class="material-icons right">delete</i>
+                            <span uk-icon="icon: trash;"></span>
                         </button>
                     </a>
                 </div>

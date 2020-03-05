@@ -22,13 +22,13 @@ class MovilController
         $this->view = $viewHelper;
     }
 
-    //Listado de noticias
+    //Listado de moviles
     public function index(){
 
         //Permisos
         $this->view->permisos("moviles");
 
-        //Recojo las noticias de la base de datos
+        //Recojo los moviles de la base de datos
         $rowset = $this->db->query("SELECT * FROM moviles ORDER BY precio DESC");
 
         //Asigno resultados a un array de instancias del modelo
@@ -47,30 +47,30 @@ class MovilController
         //Permisos
         $this->view->permisos("moviles");
 
-        //Obtengo la noticia
+        //Obtengo los datos del movil que pido
         $rowset = $this->db->query("SELECT * FROM moviles WHERE id='$id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
         $movil = new Movil($row);
 
         if ($movil->activo == 1){
 
-            //Desactivo la noticia
+            //Desactivo el movil, tanto en la home como en la lista.
             $consulta = $this->db->exec("UPDATE moviles SET activo=0 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/moviles","green","La noticia <strong>$movil->modelo</strong> se ha desactivado correctamente.") :
+                $this->view->redireccionConMensaje("admin/moviles","black","El móvil <strong>$movil->modelo</strong> se ha desactivado correctamente.") :
                 $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
         }
 
         else{
 
-            //Activo la noticia
+            //Activo el móvil para que se muestre en la lista
             $consulta = $this->db->exec("UPDATE moviles SET activo=1 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/moviles","green","El movil <strong>$movil->modelo</strong> se ha activado correctamente.") :
+                $this->view->redireccionConMensaje("admin/moviles","black","El movil <strong>$movil->modelo</strong> se ha activado correctamente.") :
                 $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -82,7 +82,7 @@ class MovilController
         //Permisos
         $this->view->permisos("moviles");
 
-        //Obtengo la noticia
+        //Obtengo la el móvil
         $rowset = $this->db->query("SELECT * FROM moviles WHERE id='$id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
         $movil = new Movil($row);
@@ -94,7 +94,7 @@ class MovilController
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/moviles","green","El movil <strong>$movil->modelo</strong> ya no se muestra en la home.") :
+                $this->view->redireccionConMensaje("admin/moviles","black","El movil <strong>$movil->modelo</strong> ya no se muestra en la home.") :
                 $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -105,7 +105,7 @@ class MovilController
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/moviles","green","El movil <strong>$movil->modelo</strong> ahora se muestra en la home.") :
+                $this->view->redireccionConMensaje("admin/moviles","black","El movil <strong>$movil->modelo</strong> ahora se muestra en la home.") :
                 $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -116,12 +116,12 @@ class MovilController
         //Permisos
         $this->view->permisos("moviles");
 
-        //Obtengo la noticia
+        //Obtengo el móvil
         $rowset = $this->db->query("SELECT * FROM moviles WHERE id=' $id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
         $movil = new Movil($row);
 
-        //Borro la noticia
+        //Borro el móvil
         $consulta = $this->db->exec("DELETE FROM moviles WHERE id='$id'");
 
         //Borro la imagen asociada
@@ -134,7 +134,7 @@ class MovilController
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/moviles","green","La noticia se ha borrado correctamente$texto_imagen.") :
+            $this->view->redireccionConMensaje("admin/moviles","black","El móvil se ha borrado correctamente$texto_imagen.") :
             $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
 
     }
@@ -159,17 +159,15 @@ class MovilController
 
         //Si ha pulsado el botón de guardar
         if (isset($_POST["guardar"])){
-echo("boton 1");
+
             //Recupero los datos del formulario
             $marca = filter_input(INPUT_POST, "marca", FILTER_SANITIZE_STRING);
             $modelo = filter_input(INPUT_POST, "modelo", FILTER_SANITIZE_STRING);
             $precio = filter_input(INPUT_POST, "precio", FILTER_SANITIZE_STRING);
             $caracteristicas = filter_input(INPUT_POST, "texto", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            echo("' '.boton 2");
 
             //Genero slug (url amigable)
             $slug = $this->view->getSlug($modelo);
-            echo("' '.boton 3");
 
             //Imagen
             $imagen_recibida = $_FILES['imagen'];
@@ -180,7 +178,7 @@ echo("boton 1");
 
             if ($id == "nuevo"){
                 echo("' '.boton 5");
-                //Creo una nueva noticia
+                //Inserto en el móvil los datos
                 $consulta = $this->db->exec("INSERT INTO moviles 
                     (marca, modelo, slug, precio, caracteristicas, imagen) VALUES 
                     ('$marca','$modelo','$slug','$precio','$caracteristicas','$imagen')");
@@ -197,12 +195,12 @@ echo("boton 1");
 
                 //Mensaje y redirección
                 ($consulta > 0) ?
-                    $this->view->redireccionConMensaje("admin/moviles","green","El movil <strong>$modelo</strong> se creado correctamente.".$texto_img) :
+                    $this->view->redireccionConMensaje("admin/moviles","black","El movil <strong>$modelo</strong> se creado correctamente.".$texto_img) :
                     $this->view->redireccionConMensaje("admin/moviles","red","Hubo un error al guardar en la base de datos.");
             }
             else{
 
-                //Actualizo la noticia
+                //Actualizo el móvil
                 $this->db->exec("UPDATE moviles SET 
                     marca='$marca', modelo='$modelo',slug='$slug',
                     precio='$precio',caracteristicas='$caracteristicas' WHERE id='$id'");
@@ -219,15 +217,15 @@ echo("boton 1");
                 }
 
                 //Mensaje y redirección
-                $this->view->redireccionConMensaje("admin/moviles","green","El movil <strong>$modelo</strong> se guardado correctamente.".$texto_img);
+                $this->view->redireccionConMensaje("admin/moviles","black","<strong>$modelo</strong> se ha guardado correctamente.".$texto_img);
 
             }
         }
 
-        //Si no, obtengo noticia y muestro la ventana de edición
+        //Si no he pulsado el botón de guardar, obtengo el móvil y muestro la ventana de edición
         else{
 
-            //Obtengo la noticia
+            //Obtengo el móvil
             $rowset = $this->db->query("SELECT * FROM moviles WHERE id='$id' LIMIT 1");
             $row = $rowset->fetch(\PDO::FETCH_OBJ);
             $movil = new Movil($row);

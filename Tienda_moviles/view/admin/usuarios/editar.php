@@ -27,7 +27,7 @@
                 </label>
             </p>
         </div>
-        <div class="row">
+
             <p>¿Puede modificar los móviles? </p>
 
             <p>
@@ -36,7 +36,7 @@
                     <span></span>
                 </label>
             </p>
-
+        <div class="row">
 
             <?php $clase = ($datos->id) ? "" : "hide" ?>
             <p class="<?php echo $clase ?>">
@@ -45,12 +45,12 @@
 
             <div class="input-field col s12">
                 <a href="<?php echo $_SESSION['home'] ?>admin/usuarios" title="Volver">
-                    <button class="btn btn-outline-secondary" type="button">Volver
-                        <i class="material-icons right">replay</i>
+                    <button class="btn btn-outline-warning" type="button">Volver
+                        <span uk-icon="icon: reply ; color:yellow"></span>
                     </button>
                 </a>
-                <button class="btn btn-outline-primary" type="submit" name="guardar">Guardar
-                    <i class="material-icons right">save</i>
+                <button class="btn btn-outline-light" type="submit" name="guardar">Guardar
+                    <span uk-icon="icon: check "></span>
                 </button>
             </div>
 

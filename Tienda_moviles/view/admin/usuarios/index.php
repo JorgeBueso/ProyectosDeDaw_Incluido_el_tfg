@@ -5,14 +5,14 @@
         <div class="card horizontal admin">
             <div class="card-stacked">
                 <div class="card-content">
-                    <i class="grey-text material-icons medium">person</i>
+                    <span uk-icon="icon:users ;ratio: 10"></span>
                     <h4 class="grey-text">
                         nuevo usuario
                     </h4><br><br>
                 </div>
                 <div class="card-action">
                     <a href="<?php echo $_SESSION['home']."admin/usuarios/crear" ?>" title="Añadir nuevo usuario">
-                        <i class="material-icons">add_circle</i>
+                        <span uk-icon="icon: plus"></span>
                     </a>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="card horizontal  sticky-action admin">
                 <div class="card-stacked">
                     <div class="card-content">
-                        <i class="material-icons medium">person</i>
+                        <span uk-icon="icon:user ;ratio: 10"></span>
                         <h4>
                             <?php echo $row->usuario ?>
                         </h4>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="card-action">
                         <a href="<?php echo $_SESSION['home']."admin/usuarios/editar/".$row->id ?>" title="Editar">
-                            <i class="material-icons">edit</i>
+                            <span uk-icon="icon: pencil;"></span>
                         </a>
                         <?php $title = ($row->activo == 1) ? "Desactivar" : "Activar" ?>
                         <?php $color = ($row->activo == 1) ? "green-text" : "red-text" ?>

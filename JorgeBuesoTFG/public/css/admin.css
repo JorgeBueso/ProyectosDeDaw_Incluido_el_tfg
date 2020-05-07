@@ -1,0 +1,93 @@
+body {
+    background: url(../img/FondoEspacial.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+main {
+
+    background: url(../img/FondoEspacial.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+footer {
+    padding: 0.75rem 1.25rem;
+    background-color: darkgrey;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 50%;
+}
+
+.row {
+    padding: 50px;
+}
+
+article {
+    width: 45rem;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+
+.nombre_accesorio{
+    height: 54px;
+ }
+
+.imagenCarta {
+    height: 12rem;
+}
+
+.DatosCarta p{
+    margin-top: 1%;
+    font-size: medium;
+}
+article div.ContenidoCarta {
+    padding: 0 0 0 1rem;
+    margin-top: 1rem;
+    height: 12rem;
+    background-color: #3f51b599;
+    width: 100%;
+}
+
+.AccesorioimagenParticular {
+    width: 30%;
+    height: 40%;
+}
+
+.imagenUnica {
+    height: 100%;
+    width: 50%;
+}
+
+
+
+
+/*****************************************************LOGIN************************************************************/
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.login-form-1{
+    padding: 9%;
+    background:#282726;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#fff;
+}
+
+

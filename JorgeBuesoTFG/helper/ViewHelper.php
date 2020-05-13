@@ -11,13 +11,13 @@ class ViewHelper
             require("../view/$carpeta/$archivo.php");
 
         } else {
-//echo $carpeta.$archivo;
+echo $carpeta." "."archivo:".$archivo;
             //CABECERA
             require("../view/$carpeta/partials/header.php");
 
             //BODY
             require("../view/$carpeta/$archivo.php");
-
+            echo $carpeta.$archivo;
             //PIE
             require("../view/$carpeta/partials/footer.php");
         }

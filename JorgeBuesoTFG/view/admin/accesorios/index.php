@@ -19,7 +19,7 @@
                         <p>Precio:<?php echo $row->precio ?>€</p>
                     </div>
 
-                        <a href="<?php echo $_SESSION['home'] . "accesorio/" . $row->slug ?>" class="btn btn-primary">Detalles</a>
+                        <a href="<?php echo $_SESSION['home'] . "accesorioAdmin/" . $row->slug ?>" class="btn btn-primary">Detalles</a>
                         <a href="<?php echo $_SESSION['home'] ?>carrito" class="btn btn-primary">Añadir al carro</a>
 
                 </div>

@@ -124,12 +124,6 @@
 
 
 
-                <li class="nav-item">
-
-                    <i class="fab fa-500px"></i>
-                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>carrito">carrito</a>
-                </li>
-
             </ul>
 
             <form class="form-inline my-2 my-lg-0">

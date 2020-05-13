@@ -40,7 +40,6 @@ class AppController
     }
 
 
-
     //pido el accesorio específico
     public function accesorio($slug){
 
@@ -56,11 +55,43 @@ class AppController
 
     }
 
+    public function accesorioAdmin ($slug){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios WHERE activo=1 AND slug='$slug' LIMIT 1");
+
+        //Asigno resultado a una instancia del modelo
+        $row = $rowset->fetch(\PDO::FETCH_OBJ);
+        $accesorio = new Accesorio($row);
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/accesorioAdmin", $accesorio);
+
+    }
+
+
+
+    public function tipo($tipo){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios AND tipo='$tipo' ");
+
+        //Asigno resultado a una instancia del modelo
+        $row = $rowset->fetch(\PDO::FETCH_OBJ);
+        $accesorio = new Accesorio($row);
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/index", $accesorio);
+
+    }
+
     public function carrito(){
 
         $this->view->vista("app","carrito");
 
     }
+
+
 
 
 }

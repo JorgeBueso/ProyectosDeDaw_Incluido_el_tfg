@@ -101,27 +101,71 @@ switch ($ruta) {
 
 ////////////////////////////////////// PARTE ADMIN/////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////USUARIOS//////////////////////////////////////////////////
+
     case "admin":
 
-    case"admin/entrar":
+    case "admin/entrar":
         controlador("usuarios")->entrar();
         break;
 
-    case"admin/usuarios/registrar":
-        controlador("usuarios")->crear();
-        break;
+    case"admin/accesorios/index":
+        controlador("usuarios")->admin();
+    break;
 
-    case"admin/entrar":
-        controlador("usuarios")->registrar();
-        break;
 
     case "admin/salir":
         controlador("usuarios")->salir();
         break;
 
-    case"admin/accesorios/index":
-        controlador()->admin();
-    break;
+    case "admin/usuarios":
+        controlador("usuarios")->indexUsuarios();
+        break;
+    case "admin/usuarios/crear":
+        controlador("usuarios")->crearUsuarioConAdmin();
+        break;
+    case (strpos($ruta,"admin/usuarios/editar") === 0):
+        controlador("usuarios")->editarUsuario(str_replace("admin/usuarios/editar/","",$ruta));
+        break;
+    case (strpos($ruta,"admin/usuarios/activar/") === 0):
+        controlador("usuarios")->activar(str_replace("admin/usuarios/activar/","",$ruta));
+        break;
+    case (strpos($ruta,"admin/usuarios/borrar/") === 0):
+        controlador("usuarios")->borrar(str_replace("admin/usuarios/borrar/","",$ruta));
+        break;
+
+
+
+
+/////////////////////////////////////////////////////////ACCESORIOS/////////////////////////////////////////////////////
+
+    case (strpos($ruta, "admin/accesorios/tipo/") === 0):
+        controlador()->tipo(str_replace("admin/partials/tipo", "", $ruta));
+        break;
+
+    case (strpos($ruta,"accesorioAdmin/") === 0):
+        controlador()->accesorioAdmin(str_replace("accesorioAdmin/", "", $ruta));
+        break;
+
+    case"AdminBaberos":
+        controlador("accesorios")-> AdminBaberos();
+        break;
+
+    case "AdminMenaje":
+        controlador("accesorios")->AdminMenaje();
+        break;
+
+    case"AdminSillaDeRuedas":
+        controlador("accesorios")->AdminSillaDeRuedas();
+        break;
+
+    case"Adminbastones":
+        controlador("accesorios")->Adminbastones();
+        break;
+
+    case "admin/NuevoAccesorio":
+        controlador("accesorios")->crear();
+        break;
 
     //Resto de rutas
     default:

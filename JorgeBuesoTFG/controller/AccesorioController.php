@@ -37,6 +37,7 @@ class AccesorioController
 
         //Llamo a la vista
         $this->view->vista("app", "index", $baberos);
+
     }
 
     public function menaje(){
@@ -85,6 +86,71 @@ class AccesorioController
     }
 
 
+/////////////////////////////////////////////////////ADMIN//////////////////////////////////////////////////
 
+    public function AdminBaberos(){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios WHERE tipo= 'Babero' ORDER BY id DESC");
+
+        //Asigno resultados a un array de instancias del modelo
+        $baberos = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
+            array_push($baberos,new Accesorio($row));
+        }
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/index", $baberos);
+
+    }
+
+    public function AdminMenaje(){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios WHERE tipo= 'Menaje' ORDER BY id DESC");
+
+        //Asigno resultados a un array de instancias del modelo
+        $accesorios = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
+            array_push($accesorios,new Accesorio($row));
+        }
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/index", $accesorios);
+    }
+
+    public function AdminSillaDeRuedas(){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios WHERE tipo= 'Sillas de ruedas' ORDER BY id DESC");
+
+        //Asigno resultados a un array de instancias del modelo
+        $accesorios = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
+            array_push($accesorios,new Accesorio($row));
+        }
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/index", $accesorios);
+    }
+
+    public function Adminbastones(){
+
+        //Consulta a la bbdd
+        $rowset = $this->db->query("SELECT * FROM accesorios WHERE tipo= 'Baston' ORDER BY id DESC");
+
+        //Asigno resultados a un array de instancias del modelo
+        $bastones = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
+            array_push($bastones,new Accesorio($row));
+        }
+
+        //Llamo a la vista
+        $this->view->vista("admin", "accesorios/index", $bastones);
+    }
+
+    public function crear(){
+        $this->view->vista("admin","accesorios/Crear_Editar");
+    }
 
 }

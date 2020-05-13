@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/admin.css">
 
     <!-- BOOTSTRAP CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
 
@@ -36,10 +36,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo $_SESSION['home'] . "admin" ?>">Inicio <span
+                <a class="nav-link" href="<?php echo $_SESSION['home'] . "admin/accesorios/index" ?>">Inicio <span
                             class="sr-only">(current)</span></a>
             </li>
+
             <li class="nav-item dropdown">
+
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -48,25 +50,45 @@
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "admin" ?>"
+                    <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "AdminBaberos" ?>"
                        title="Baberos">Baberos</a>
-
+                    <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "AdminMenaje" ?>"
+                       title="Menaje">Menaje</a>
 
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo $_SESSION['home']?>admin/usurios">Usuarios</a>
+            <li class="nav-item dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    MOVILIDAD
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <a class="dropdown-item" href="<?php echo $_SESSION['home'] ?>Adminbastones">Bastones</a>
+                    <a class="dropdown-item" href="<?php echo $_SESSION['home'] ?>AdminSillaDeRuedas"
+                       title="Silla de ruedas">Silla De ruedas</a>
+                </div>
             </li>
+
+<!--            --><?php //if ($_SESSION['usuarios'] == 1) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/usuarios">Usuarios</a>
+                </li>
+<!--            --><?// } ?>
+<!--            --><?php //if ($_SESSION['usuarios'] == 1) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/NuevoAccesorio">Añadir un nuevo accesorio</a>
+                </li>
+<!--            --><?// } ?>
 
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/salir" title="Salir">Salir</a>
             </li>
         </ul>
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
 <main>

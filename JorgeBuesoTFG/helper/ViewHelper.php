@@ -11,13 +11,13 @@ class ViewHelper
             require("../view/$carpeta/$archivo.php");
 
         } else {
-echo $carpeta." "."archivo:".$archivo;
+
             //CABECERA
             require("../view/$carpeta/partials/header.php");
-
+//            echo $carpeta." "."archivo:".$archivo;
             //BODY
             require("../view/$carpeta/$archivo.php");
-            echo $carpeta.$archivo;
+
             //PIE
             require("../view/$carpeta/partials/footer.php");
         }
@@ -39,9 +39,10 @@ echo $carpeta." "."archivo:".$archivo;
 
     public function redireccionConMensaje($ruta, $tipo, $texto)
     {
-
+echo $ruta;
         $_SESSION['mensaje'] = array("tipo" => $tipo, "texto" => $texto);
         header("Location:" . $_SESSION["home"] . $ruta);
+        echo $ruta;
 
     }
 }

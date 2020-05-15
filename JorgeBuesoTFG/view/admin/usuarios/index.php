@@ -1,20 +1,17 @@
-<h3>
-    <a href="<?php echo $_SESSION['home'] ?>admin" title="Inicio">Inicio</a> <span>| Usuarios</span>
-</h3>
-<div class="row">
+<div class="row" >
     <!--Nuevo-->
-    <article class="col s12 l6">
+    <article class="col col-xl">
         <div class="card horizontal admin">
             <div class="card-stacked">
                 <div class="card-content">
-                    <i class="grey-text material-icons medium">person</i>
+                    <span uk-icon="icon:users ;ratio: 10"></span>
                     <h4 class="grey-text">
                         nuevo usuario
                     </h4><br><br>
                 </div>
                 <div class="card-action">
                     <a href="<?php echo $_SESSION['home']."admin/usuarios/crear" ?>" title="Añadir nuevo usuario">
-                        <i class="material-icons">add_circle</i>
+                        <span uk-icon="icon: plus"></span>
                     </a>
                 </div>
             </div>
@@ -25,16 +22,16 @@
             <div class="card horizontal  sticky-action admin">
                 <div class="card-stacked">
                     <div class="card-content">
-                        <i class="material-icons medium">person</i>
+                        <i class="fab fa-500px"></i>
                         <h4>
                             <?php echo $row->usuario ?>
                         </h4>
                         <strong>Usuarios: </strong><?php echo ($row->usuarios) ? "Sí" : "No" ?><br>
-                        <strong>Noticias: </strong><?php echo ($row->noticias) ? "Sí" : "No" ?>
+                        <strong>Accesorios: </strong><?php echo ($row->moviles) ? "Sí" : "No" ?>
                     </div>
                     <div class="card-action">
                         <a href="<?php echo $_SESSION['home']."admin/usuarios/editar/".$row->id ?>" title="Editar">
-                            <i class="material-icons">edit</i>
+                            <span uk-icon="icon: pencil;"></span>
                         </a>
                         <?php $title = ($row->activo == 1) ? "Desactivar" : "Activar" ?>
                         <?php $color = ($row->activo == 1) ? "green-text" : "red-text" ?>
@@ -47,6 +44,7 @@
                         </a>
                     </div>
                 </div>
+
                 <!--Confirmación de borrar-->
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">Borrar usuario<i class="material-icons right">close</i></span>
@@ -55,8 +53,8 @@
                         Esta acción no se puede deshacer.
                     </p>
                     <a href="<?php echo $_SESSION['home']."admin/usuarios/borrar/".$row->id ?>" title="Borrar">
-                        <button class="btn waves-effect waves-light" type="button">Borrar
-                            <i class="material-icons right">delete</i>
+                        <button class="btn" type="button">Borrar
+                            <i class="fas fa-trash-alt"></i>
                         </button>
                     </a>
                 </div>

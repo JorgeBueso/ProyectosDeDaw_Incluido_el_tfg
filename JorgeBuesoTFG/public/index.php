@@ -167,6 +167,11 @@ switch ($ruta) {
         controlador("accesorios")->crear();
         break;
 
+    case (strpos($ruta,"admin/accesorios/modificar/") === 0):
+
+        controlador("accesorios")->modificar(str_replace("admin/accesorios/modificar/","",$ruta));
+        break;
+
     //Resto de rutas
     default:
         controlador()->accesorios();

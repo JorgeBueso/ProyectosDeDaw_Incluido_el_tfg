@@ -21,4 +21,16 @@ $(document).ready(function(){
         $("#password").toggleClass( "hide" );
     });
 
+
+    $(function(){
+
+        $('#show').on('click',function(){
+            $('.card-reveal').slideToggle('slow');
+        });
+
+        $('.card-reveal .close').on('click',function(){
+            $('.card-reveal').slideToggle('slow');
+        });
+    });
+
 });

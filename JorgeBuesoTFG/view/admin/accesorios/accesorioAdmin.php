@@ -1,9 +1,16 @@
 <div id="ContenidoFicha" class="w3-row-padding">
-    <?php foreach ($datos as $row) { ?>
-    <article class="w3-col s4">
+
+    <article>
+        <?php
+        $n=0;
+        foreach ($datos as $row) {
+            $n= $n + 1;
+            echo $n;
+            ?>
+
         <h1><?php
             echo $datos->nombre ?></h1>
-        <div class="w3-row-padding ">
+        <div class="w3-row-padding AccesorioAdminContenidoCarta">
             <div class="AccesorioimagenParticular">
                 <img class="imagenUnica" src="<?php echo $_SESSION['public'] . "img/" . $datos->imagen ?>"
                      alt="<?php echo $datos->modelo ?>">
@@ -17,9 +24,15 @@
                 </div>
             </div>
 
-            <a href="<?php echo $_SESSION['home'] . "accesorio/modificar/" . $row->id ?>" title="Modificar">modificar</a>
+            <a href="<?php echo $_SESSION['home'] . "admin/accesorios/modificar/"  . $row->id ?>" title="Modificar"
+               type="button" class="btn btn-outline-light">Modificar</a>
+
+            <a href="<?php echo $_SESSION['home'] . "carrito" . $row->id ?>" title="AñadirAlCarro"
+               type="button" class="btn btn-outline-dark">Añadir al carro</a>
 
         </div>
+        <?php } ?>
+
     </article>
-    <?php}?>
+
 </div>

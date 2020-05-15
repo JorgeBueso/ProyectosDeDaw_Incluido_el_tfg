@@ -81,7 +81,10 @@ article div.ContenidoCarta {
     width: 11rem;
 }
 
-
+.AccesorioAdminContenidoCarta{
+    padding: 1rem;
+    background-color: #706fd3;
+}
 
 
 /*****************************************************LOGIN************************************************************/

@@ -182,6 +182,16 @@ class UsuarioController
 
     }
 
+    public function crearUsuario(){
+
+        //Creo un nuevo usuario vacío
+        $usuario = new Usuario();
+
+        //Llamo a la ventana de edición
+        $this->view->vista("admin","usuarios/editar", $usuario);
+
+    }
+
     public function crearUsuarioConAdmin(){
 
         //Permisos

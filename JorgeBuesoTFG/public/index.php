@@ -138,6 +138,9 @@ switch ($ruta) {
     case "admin/usuarios":
         controlador("usuarios")->indexUsuarios();
         break;
+    case "admin/usuarios/registrar":
+        controlador("usuarios")->crearUsuario();
+        break;
     case "admin/usuarios/crear":
         controlador("usuarios")->crearUsuarioConAdmin();
         break;

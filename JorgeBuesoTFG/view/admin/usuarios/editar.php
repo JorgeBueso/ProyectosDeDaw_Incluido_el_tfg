@@ -1,3 +1,4 @@
+<article>
 <div class="RegistroUsuarios">
     <h3>
         <?php if ($datos->id){ ?>
@@ -19,34 +20,10 @@
                 <input id="clave" type="password" placeholder="Contraseña" name="clave" value="">
 
             </div>
-            <?php $clase = ($datos->id) ? "" : "hide" ?>
-            <p class="<?php echo $clase ?>">
-                <label for="cambiar_clave">
-                    <input id="cambiar_clave" name="cambiar_clave" type="checkbox">
-                    <span>Pulsa para cambiar la clave</span>
-                </label>
-            </p>
+
         </div>
 
-        <p>¿Puede modificar los móviles? </p>
-
-        <p>
-            <label for="moviles">
-                <input id="moviles" name="moviles" type="checkbox" <?php echo ($datos->moviles == 1) ? "checked" : "" ?>>
-                <span></span>
-            </label>
-        </p>
-
-        <p>¿Puede modificar los usuarios? </p>
-
-        <p>
-            <label for="usuarios">
-                <input id="usuarios" name="usuarios" type="checkbox" <?php echo ($datos->usuarios == 1) ? "checked" : "" ?>>
-                <span></span>
-            </label>
-        </p>
-
-        <div class="row">
+         <div class="row">
 
             <?php $clase = ($datos->id) ? "" : "hide" ?>
             <p class="<?php echo $clase ?>">
@@ -59,11 +36,12 @@
                         <span uk-icon="icon: reply ; color:yellow"></span>
                     </button>
                 </a>
-                <button class="btn btn-outline-light" type="submit" name="guardar">Guardar
+                <button class="btn btn-outline-info" type="submit" name="guardar">Guardar
                     <span uk-icon="icon: check "></span>
                 </button>
             </div>
 
         </div>
     </form>
+</article>
 </div>

@@ -13,14 +13,16 @@
                 <div class="ContenidoCarta">
                     <div class="DatosCarta">
                         <div class="nombre_accesorio">
-                            <h4><?php echo $row->nombre ?></h4>
+                            <h4 name="nombre"><?php echo $row->nombre ?></h4>
                         </div>
                         <p> En stock: <?php echo $row->stock ?></p>
-                        <p>Precio:<?php echo $row->precio ?>€</p>
+                        <p name="precio">Precio:<?php echo $row->precio ?>€</p>
                     </div>
 
                         <a href="<?php echo $_SESSION['home'] . "accesorioAdmin/" . $row->slug ?>" class="btn btn-primary">Detalles</a>
-                        <a href="<?php echo $_SESSION['home'] ?>carrito" class="btn btn-primary">Añadir al carro</a>
+
+                        <a href="<?php echo $_SESSION['home']."AnadirCesta" ?>" class="btn btn-primary">Añadir a la cesta</a>
+
 
                 </div>
             </div>

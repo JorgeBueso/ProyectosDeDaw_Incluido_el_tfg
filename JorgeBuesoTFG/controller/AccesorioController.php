@@ -150,39 +150,31 @@ class AccesorioController
 
 
     /*/************************************************************CREACIÓN DE UN NUEVO ACCESORIO***************************************/
-
     public function crear(){
-//
-//        //Permisos
-//        $this->view->permisos("accesorios");
-//
-//        //Creo un nuevo usuario vacío
-//        $accesorios = new Accesorio();
-
-        $this->view->vista("admin","accesorios/Crear_Editar");
-    }
-
-//    public function modificar($id){
-//        //Permisos
-////        $this->view->permisos("accesorios");
-//
-//        $this->view->vista("admin","accesorios/Crear_Editar");
-//
-//    }
-
-    public function modificar($id){
 
         //Permisos
-//        $this->view->permisos("accesorios");
+        $this->view->permisos("accesorios");
+
+        //Creo un nuevo usuario vacío
+        $accesorio = new Accesorio();
+
+        //Llamo a la ventana de edición
+        $this->view->vista("admin","accesorios/editar", $accesorio);
+
+    }
+
+    public function editar($id){
+
+        //Permisos
+        $this->view->permisos("accesorios");
 
         //Si ha pulsado el botón de guardar
         if (isset($_POST["guardar"])){
 
             //Recupero los datos del formulario
             $grupo = filter_input(INPUT_POST, "grupo", FILTER_SANITIZE_STRING);
-            $nombre = filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_STRING);
             $tipo = filter_input(INPUT_POST, "tipo", FILTER_SANITIZE_STRING);
-            $stock= filter_input(INPUT_POST, "stock", FILTER_SANITIZE_STRING);
+            $nombre = filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_STRING);
             $precio = filter_input(INPUT_POST, "precio", FILTER_SANITIZE_STRING);
             $caracteristicas = filter_input(INPUT_POST, "texto", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -199,9 +191,9 @@ class AccesorioController
             if ($id == "nuevo"){
                 echo("' '.boton 5");
                 //Inserto en el móvil los datos
-                $consulta = $this->db->exec("INSERT INTO accesorios
-                    (nombre,tipo, grupo,stock, slug, precio, caracteristicas, imagen) VALUES
-                    ('$nombre','$tipo','$grupo','$stock','$slug','$precio','$caracteristicas','$imagen')");
+                $consulta = $this->db->exec("INSERT INTO accesorios 
+                    (grupo, tipo, nombre,slug, precio, caracteristicas, imagen) VALUES 
+                    ('$grupo','$tipo','$nombre','$slug','$precio','$caracteristicas','$imagen')");
                 echo("' '.boton 6");
                 //Subo la imagen
                 if ($imagen){
@@ -215,15 +207,14 @@ class AccesorioController
 
                 //Mensaje y redirección
                 ($consulta > 0) ?
-                    $this->view->redireccionConMensaje("admin/accesorios/index","black","El movil <strong>$nombre</strong> se creado correctamente.".$texto_img) :
-                    $this->view->redireccionConMensaje("admin/accesorios/index","red","Hubo un error al guardar en la base de datos.");
-
+                    $this->view->redireccionConMensaje("admin/accesorios","black","El accesorio <strong>$nombre</strong> se ha creado correctamente.".$texto_img) :
+                    $this->view->redireccionConMensaje("admin/accesorios","red","Hubo un error al guardar en la base de datos.");
             }
             else{
 
                 //Actualizo el móvil
-                $this->db->exec("UPDATE accesorios SET
-                    nombre='$nombre',grupo='$grupo', tipo='$tipo',slug='$slug',
+                $this->db->exec("UPDATE accesorios SET 
+                    grupo='$grupo', tipo='$tipo',nombre='$nombre',slug='$slug',
                     precio='$precio',caracteristicas='$caracteristicas' WHERE id='$id'");
 
                 //Subo y actualizo la imagen
@@ -238,24 +229,26 @@ class AccesorioController
                 }
 
                 //Mensaje y redirección
-                $this->view->redireccionConMensaje("admin/accesorios/index","black","<strong>$nombre</strong> se ha guardado correctamente.".$texto_img);
+                $this->view->redireccionConMensaje("admin/accesorios","black","<strong>$nombre</strong> se ha guardado correctamente.".$texto_img);
 
             }
         }
 
-        //Si no he pulsado el botón de guardar, obtengo el móvil y muestro la ventana de edición
+        //Si no he pulsado el botón de guardar, obtengo el accesorio y muestro la ventana de edición
         else{
 
             //Obtengo el móvil
             $rowset = $this->db->query("SELECT * FROM accesorios WHERE id='$id' LIMIT 1");
             $row = $rowset->fetch(\PDO::FETCH_OBJ);
-            $accesorios = new Accesorio($row);
+            $accesorio = new Accesorio($row);
 
             //Llamo a la ventana de edición
-            $this->view->vista("admin","accesorios/Crear_Editar", $accesorios);
+            $this->view->vista("admin","accesorios/editar", $accesorio);
         }
 
     }
+
+
 
 
 }

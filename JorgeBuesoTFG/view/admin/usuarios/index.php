@@ -7,11 +7,12 @@
                     <span uk-icon="icon:users ;ratio: 10"></span>
                     <h4 class="grey-text">
                         nuevo usuario
-                    </h4><br><br>
+                    </h4>
+
                 </div>
                 <div class="card-action">
                     <a href="<?php echo $_SESSION['home']."admin/usuarios/crear" ?>" title="Añadir nuevo usuario">
-                        <span uk-icon="icon: plus"></span>
+                        <span uk-icon="icon: plus">nuevo usuario</span>
                     </a>
                 </div>
             </div>
@@ -35,7 +36,7 @@
                         </a>
                         <?php $title = ($row->activo == 1) ? "Desactivar" : "Activar" ?>
                         <?php $color = ($row->activo == 1) ? "green-text" : "red-text" ?>
-                        <?php $icono = ($row->activo == 1) ? "mood" : "mood_bad" ?>
+                        <?php $icono = ($row->activo == 1) ? "activar" : "desactivar" ?>
                         <a href="<?php echo $_SESSION['home']."admin/usuarios/activar/".$row->id ?>" title="<?php echo $title ?>">
                             <i class="<?php echo $color ?> material-icons"><?php echo $icono ?></i>
                         </a>

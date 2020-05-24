@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Accesorio;
+use App\Model\Usuario;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
 
@@ -24,15 +25,16 @@ class AppController
     }
 
     //Muestra Todos los accesorios
-    public function accesorios(){
+    public function accesorios()
+    {
 
         //Consulta a la bbdd
         $rowset = $this->db->query("SELECT * FROM accesorios WHERE activo=1 AND home=1 ORDER BY id DESC");
 
         //Asigno resultados a un array de instancias del modelo
         $accesorios = array();
-        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
-            array_push($accesorios,new Accesorio($row));
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)) {
+            array_push($accesorios, new Accesorio($row));
         }
 
         //Llamo a la vista
@@ -41,7 +43,8 @@ class AppController
 
 
     //pido el accesorio específico
-    public function accesorio($slug){
+    public function accesorio($slug)
+    {
 
         //Consulta a la bbdd
         $rowset = $this->db->query("SELECT * FROM accesorios WHERE activo=1 AND slug='$slug' LIMIT 1");
@@ -49,13 +52,15 @@ class AppController
         //Asigno resultado a una instancia del modelo
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
         $accesorio = new Accesorio($row);
+
 
         //Llamo a la vista
         $this->view->vista("app", "accesorio", $accesorio);
 
     }
 
-    public function accesorioAdmin ($slug){
+    public function accesorioAdmin($slug)
+    {
 
         //Consulta a la bbdd
         $rowset = $this->db->query("SELECT * FROM accesorios WHERE activo=1 AND slug='$slug' LIMIT 1");
@@ -64,14 +69,14 @@ class AppController
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
         $accesorio = new Accesorio($row);
 
+
         //Llamo a la vista
         $this->view->vista("admin", "accesorios/accesorioAdmin", $accesorio);
 
     }
 
-
-
-    public function tipo($tipo){
+    public function tipo($tipo)
+    {
 
         //Consulta a la bbdd
         $rowset = $this->db->query("SELECT * FROM accesorios AND tipo='$tipo' ");
@@ -84,14 +89,6 @@ class AppController
         $this->view->vista("admin", "accesorios/index", $accesorio);
 
     }
-
-    public function carrito(){
-
-        $this->view->vista("app","carrito");
-
-    }
-
-
 
 
 }

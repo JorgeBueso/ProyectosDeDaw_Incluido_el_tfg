@@ -1,7 +1,15 @@
 <div id="ContenidoFicha" class="w3-row-padding">
 
     <article>
-        <?php
+
+        <?php if (isset($_SESSION['usuario'])){ ?>
+
+            <h1>
+                Usuario: <strong name="nombre_usuario"><?php echo $_SESSION['usuarios'.'id'] ?></strong>
+            </h1>
+
+        <?php }
+
         $n=0;
         foreach ($datos as $row) {
             $n= $n + 1;
@@ -13,26 +21,29 @@
         <div class="w3-row-padding AccesorioAdminContenidoCarta">
             <div class="AccesorioimagenParticular">
                 <img class="imagenUnica" src="<?php echo $_SESSION['public'] . "img/" . $datos->imagen ?>"
-                     alt="<?php echo $datos->modelo ?>">
+                     alt="modelo:<?php echo $datos->nombre ?>">
             </div>
             <div class="card-stacked">
                 <div class="card-content">
-                    <p><?php echo $datos->precio ?>€</p>
+                    <p>precio:<?php echo $datos->precio ?>€</p>
                     <p><?php echo $datos->caracteristicas ?></p>
                     <br>
 
                 </div>
             </div>
 
-            <a href="<?php echo $_SESSION['home'] . "admin/accesorios/modificar/"  . $row->id ?>" title="Modificar"
-               type="button" class="btn btn-outline-light">Modificar</a>
+            <a href="<?php echo $_SESSION['home'] . "admin/accesorios/editar/" . $datos->id ?>" title="Editar" type="button" class="btn btn-outline-light">
+                Editar
+            </a>
 
-            <a href="<?php echo $_SESSION['home'] . "carrito" . $row->id ?>" title="AñadirAlCarro"
-               type="button" class="btn btn-outline-dark">Añadir al carro</a>
+
+            <a href="<?php echo $_SESSION['home'] . "cesta"?>" title="VerlaCesta"
+               type="button" class="btn btn-outline-dark">ver la cesta</a>
+
+            <a href="<?php echo $_SESSION['home'] . "AnadirCesta". $row->slug?>" class="btn btn-info" title="AñadirCesta">Añadir a la cesta</a>
 
         </div>
         <?php } ?>
-
     </article>
 
 </div>

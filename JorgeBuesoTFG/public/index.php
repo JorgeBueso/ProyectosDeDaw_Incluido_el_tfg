@@ -9,6 +9,9 @@ session_start();
 use App\Controller\AppController;
 use App\Controller\AccesorioController;
 use App\Controller\UsuarioController;
+use App\Controller\BlogController;
+use App\Controller\CestaController;
+
 
 /*
  * Asigno a sesión las rutas de las carpetas public y home, necesarias tanto para las rutas como para
@@ -33,10 +36,10 @@ function autoload($clase, $dir = null)
     foreach (scandir($dir) as $file) {
         //Si es un directorio (y no es de sistema) accedo y
         //busco la clase dentro de él
-        if (is_dir($dir . "/" . $file) AND substr($file, 0, 1) !== '.') {
+        if (is_dir($dir . "/" . $file) and substr($file, 0, 1) !== '.') {
             autoload($clase, $dir . "/" . $file);
         } //Si es un fichero y el nombre conicide con el de la clase
-        else if (is_file($dir . "/" . $file) AND $file == substr(strrchr($clase, "\\"), 1) . ".php") {
+        else if (is_file($dir . "/" . $file) and $file == substr(strrchr($clase, "\\"), 1) . ".php") {
             require($dir . "/" . $file);
         }
     }
@@ -54,6 +57,10 @@ function controlador($nombre = null)
             return new AccesorioController;
         case "usuarios":
             return new UsuarioController;
+        case "blog":
+            return new BlogController;
+        case"cesta":
+            return new CestaController;
     }
 
 }
@@ -92,13 +99,23 @@ switch ($ruta) {
         break;
 
 
-////////////////////////////////////// CARRITO Y regsitro/////////////////////////////////////////////
+////////////////////////////////////// BLOG Y CESTA/////////////////////////////////////////////
     case"":
-
-    case"carrito":
-        controlador()->carrito();
+    case"admin/blog":
+        controlador("blog")->irAlBlog();
         break;
 
+    case"cesta":
+        controlador("cesta")->cesta(str_replace("cesta/", "", $ruta));
+        break;
+
+    case"AnadirCesta":
+        controlador("cesta")->AnadirAlaCesta(str_replace("cesta/", "", $ruta));
+        break;
+
+    case (strpos($ruta, "borrarCesta") === 0):
+        controlador("cesta")->borrar(str_replace("borrarCesta", "", $ruta));
+        break;
 ////////////////////////////////////// PARTE ADMIN/////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////USUARIOS//////////////////////////////////////////////////
@@ -111,7 +128,7 @@ switch ($ruta) {
 
     case"admin/accesorios/index":
         controlador("usuarios")->admin();
-    break;
+        break;
 
 
     case "admin/salir":
@@ -124,17 +141,15 @@ switch ($ruta) {
     case "admin/usuarios/crear":
         controlador("usuarios")->crearUsuarioConAdmin();
         break;
-    case (strpos($ruta,"admin/usuarios/editar") === 0):
-        controlador("usuarios")->editarUsuario(str_replace("admin/usuarios/editar/","",$ruta));
+    case (strpos($ruta, "admin/usuarios/editar") === 0):
+        controlador("usuarios")->editarUsuario(str_replace("admin/usuarios/editar/", "", $ruta));
         break;
-    case (strpos($ruta,"admin/usuarios/activar/") === 0):
-        controlador("usuarios")->activar(str_replace("admin/usuarios/activar/","",$ruta));
+    case (strpos($ruta, "admin/usuarios/activar/") === 0):
+        controlador("usuarios")->activar(str_replace("admin/usuarios/activar/", "", $ruta));
         break;
-    case (strpos($ruta,"admin/usuarios/borrar/") === 0):
-        controlador("usuarios")->borrar(str_replace("admin/usuarios/borrar/","",$ruta));
+    case (strpos($ruta, "admin/usuarios/borrar/") === 0):
+        controlador("usuarios")->borrar(str_replace("admin/usuarios/borrar/", "", $ruta));
         break;
-
-
 
 
 /////////////////////////////////////////////////////////ACCESORIOS/////////////////////////////////////////////////////
@@ -143,12 +158,12 @@ switch ($ruta) {
         controlador()->tipo(str_replace("admin/partials/tipo", "", $ruta));
         break;
 
-    case (strpos($ruta,"accesorioAdmin/") === 0):
+    case (strpos($ruta, "accesorioAdmin/") === 0):
         controlador()->accesorioAdmin(str_replace("accesorioAdmin/", "", $ruta));
         break;
 
     case"AdminBaberos":
-        controlador("accesorios")-> AdminBaberos();
+        controlador("accesorios")->AdminBaberos();
         break;
 
     case "AdminMenaje":
@@ -163,14 +178,14 @@ switch ($ruta) {
         controlador("accesorios")->Adminbastones();
         break;
 
-    case "admin/NuevoAccesorio":
+    case "admin/accesorios/crear":
         controlador("accesorios")->crear();
         break;
 
-    case (strpos($ruta,"admin/accesorios/modificar/") === 0):
-
-        controlador("accesorios")->modificar(str_replace("admin/accesorios/modificar/","",$ruta));
+    case (strpos($ruta,"admin/accesorios/editar/") === 0):
+        controlador("accesorios")->editar(str_replace("admin/accesorios/editar/","",$ruta));
         break;
+
 
     //Resto de rutas
     default:

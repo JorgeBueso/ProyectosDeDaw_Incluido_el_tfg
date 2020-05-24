@@ -41,12 +41,12 @@
                 </li>
 
                 <li class="nav-item dropdown">
-
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
+                                                 data-toggle="dropdown"
+                                                 aria-haspopup="true" aria-expanded="false">
                         ALIMENTACION
                     </a>
+
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -57,6 +57,7 @@
 
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -73,48 +74,8 @@
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        HIGIENE
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "" ?>"
-                           title="Baberos">Esponjas</a>
-                        <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "" ?>"
-                           title="Menaje">Pañales</a>
-                        <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "" ?>"
-                           title="Menaje">Empapadores</a>
-                        <a class="dropdown-item" href="<?php echo $_SESSION['home'] . "" ?>"
-                           title="Menaje">Lavavo portatil</a>
-
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        SEGURIDAD
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        CUIDADOS
-                    </a>
-                </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>asesoramiento">Asesoramiento</a>
-                </li>
 
                 <li class="nav-item">
 
@@ -126,10 +87,6 @@
 
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </header>

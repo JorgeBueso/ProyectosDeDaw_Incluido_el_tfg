@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>TFG</title>
+    <title>El colmado del mayor</title>
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/admin.css">
@@ -17,28 +17,39 @@
 </head>
 
 <body>
+<!--<script>-->
+<!--    window.onscroll = function() {myFunction()};-->
+<!---->
+<!--    var header = document.getElementsByName('header');-->
+<!--    var sticky = header.offsetTop;-->
+<!---->
+<!--    function myFunction() {-->
+<!--        if (window.pageYOffset > sticky) {-->
+<!--            header.classList.add("sticky");-->
+<!--        } else {-->
+<!--            header.classList.remove("sticky");-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 <header>
+<!--    IAGEN LOGOTIPO-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!--Logo-->
             <a href="<?php echo $_SESSION['home'] ?>" class="navbar-brand" title="Inicio">
-                <img src="<?php echo $_SESSION['public'] ?>img/" alt="Mayor Cuidado">
+                <img class="logotipo" src="<?php echo $_SESSION['public'] ?>img/logotipoModificado.png" alt="El colmado del mayor">
+                <h4>El colmado del mayor</h4>
             </a>
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<!--    MENÚ DEL HEADER-->
+    <nav class="navbar navbar-expand-lg navbar-light menuHeader ">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo $_SESSION['home'] . "admin/accesorios/index" ?>">Inicio <span
-                                class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse " >
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link" href="<?php echo $_SESSION['home'] . "admin/accesorios/index" ?>">Inicio </a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -58,6 +69,7 @@
 
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -74,20 +86,32 @@
                     </div>
                 </li>
 
-                <!--            --><?php //if ($_SESSION['usuarios'] == 1) { ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/usuarios">Usuarios</a>
-                </li>
+                <?php if (isset($_SESSION['usuario'])) { ?>
+                <?php if ($_SESSION['usuarios'] == 1) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/usuarios">Usuarios</a>
+                    </li>
+                <?php } ?>
+
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/blog">Blog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/personal">Personal</a>
+                </li>
 
-
+                <?php if ($_SESSION['accesorios'] == 1) { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/accesorios/crear">Añadir un nuevo
                         accesorio</a>
                 </li>
+                <?php } ?>
+                <li class="nav-item">
 
+                        <a class="nav-link" name="nombre_usuario"><?php echo $_SESSION['usuario'] ?></a>
+
+                    <?php } ?>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $_SESSION['home'] ?>admin/salir" title="Salir">Salir</a>
@@ -102,6 +126,7 @@
     </nav>
 </header>
 <main>
+
 
 
     <section class="container-fluid">

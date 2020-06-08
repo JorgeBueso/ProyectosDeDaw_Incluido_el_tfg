@@ -15,7 +15,8 @@
                         <div class="nombre_accesorio">
                             <h4 name="nombre"><?php echo $row->nombre ?></h4>
                         </div>
-                        <p> En stock: <?php echo $row->stock ?></p>
+<!--                        <p> En stock: --><?php //echo $row->stock ?><!--</p>-->
+                        <p> <?php echo $row->entradilla ?></p>
                         <p name="precio">Precio:<?php echo $row->precio ?>€</p>
                     </div>
 

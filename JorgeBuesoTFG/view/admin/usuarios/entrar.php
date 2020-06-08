@@ -10,9 +10,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/admin.css">
 
 </head>
-<div class="container login-container">
-    <div class="row">
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
         <div class="col-md-6 login-form-1">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src="<?php $_SESSION['public']?>../img/logotipoModificado.png" class="brand_logo" alt="Logo">
+                </div>
+            </div>
             <h3>Inicio de sesión</h3>
 
             <form class="col m12 l6" method="POST">
@@ -24,6 +29,7 @@
                     <input type="text" name="usuario" class="form-control input_user" value=""
                            placeholder="username">
                 </div>
+
                 <div class="input-group mb-2">
                     <div class="input-group-append">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -34,10 +40,13 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-3 login_container">
-                    <button type="submit" name="acceder" class="btn login_btn">Login</button>
+                    <button type="submit" name="acceder" class="btn btn-outline-light">Login</button>
                 </div>
 
-                <a href="<?php echo $_SESSION['home'] ?>admin/usuarios/registrar">registrarse</a>
+                <div class="d-flex justify-content-center mt-3 login_container">
+
+                <a class="btn btn-outline-warning"  href="<?php echo $_SESSION['home'] ?>admin/usuarios/registrar">¿Aún no estás registrado?</a>
+                </div>
 
             </form>
         </div>

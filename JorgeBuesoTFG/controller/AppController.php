@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Accesorio;
+use App\Model\Personal;
 use App\Model\Usuario;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
@@ -89,6 +90,25 @@ class AppController
         $this->view->vista("admin", "accesorios/index", $accesorio);
 
     }
+
+    public function personal()
+    {
+
+        $rowset= $this->db->query("SELECT * FROM personal ORDER BY id DESC ");
+
+        $personal = array();
+        while ($row = $rowset->fetch(\PDO::FETCH_OBJ)) {
+            array_push($personal, new Personal($row));
+        }
+
+
+
+        $this->view->vista("admin", "personal",$personal);
+
+
+    }
+
+
 
 
 }

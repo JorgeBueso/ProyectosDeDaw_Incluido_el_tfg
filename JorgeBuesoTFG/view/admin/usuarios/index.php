@@ -36,7 +36,7 @@
                         </a>
                         <?php $title = ($row->activo == 1) ? "Desactivar" : "Activar" ?>
                         <?php $color = ($row->activo == 1) ? "green-text" : "red-text" ?>
-                        <?php $icono = ($row->activo == 1) ? "activar" : "desactivar" ?>
+                        <?php $icono = ($row->activo == 1) ? "Activado" : "desactivado" ?>
                         <a href="<?php echo $_SESSION['home']."admin/usuarios/activar/".$row->id ?>" title="<?php echo $title ?>">
                             <i class="<?php echo $color ?> material-icons"><?php echo $icono ?></i>
                         </a>

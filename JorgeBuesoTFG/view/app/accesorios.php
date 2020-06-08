@@ -13,7 +13,9 @@
 
                     <div class="ContenidoCarta">
                         <div class="DatosCarta">
-                            <h4><?php echo $row->nombre ?></h4>
+                            <div class="nombre_accesorio">
+                                <h4 name="nombre"><?php echo $row->nombre ?></h4>
+                            </div>
                             <p> En stock: <?php echo $row->stock ?></p>
                             <p>Precio:<?php echo $row->precio ?>€</p>
                         </div>

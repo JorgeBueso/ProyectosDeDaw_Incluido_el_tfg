@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>TFG</title>
+    <title>El colmado del mayor</title>
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/app.css">
@@ -22,7 +22,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!--Logo-->
             <a href="<?php echo $_SESSION['home'] ?>" class="navbar-brand" title="Inicio">
-                <img src="<?php echo $_SESSION['public'] ?>img/" alt="Mayor Cuidado">
+                <img class="logotipo" src="<?php echo $_SESSION['public'] ?>img/logotipoModificado.png" alt="El colmado del mayor">
+               <h4>El colmado del mayor</h4>
             </a>
         </div>
     </nav>

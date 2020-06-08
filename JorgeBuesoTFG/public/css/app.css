@@ -6,6 +6,11 @@ body {
     background-size: cover;
 }
 
+header{
+    /*position: fixed;*/
+    /*width: 100%;*/
+
+}
 main {
 
     background: url(../img/FondoEspacial.jpg) no-repeat center center fixed;
@@ -14,6 +19,14 @@ main {
     -o-background-size: cover;
     background-size: cover;
 
+}
+
+.logotipo {
+    width: 6rem;
+    height: 6rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 footer {
@@ -34,11 +47,10 @@ img {
 }
 
 #ContenidoFicha {
-    width: 2px;
+    padding: 3rem;
 }
 
 article {
-
     width: 45rem;
     padding: 15px;
     background-color: whitesmoke;
@@ -48,18 +60,29 @@ article {
     height: 12rem;
 }
 
+
 article div.ContenidoCarta {
-    height: 12rem;
-    background-color: darkgrey;
-    width: 100%;
+    padding: 1rem;
+    background-color: #706fd3;
+}
+
+.DatosCarta p{
+    margin-top: 1%;
+    font-size: medium;
 }
 
 .AccesorioimagenParticular {
-    width: 30%;
-    height: 40%;
+    height: 11rem;
+    width: 11rem;
+}
+
+.nombre_accesorio{
+    height: 54px;
 }
 
 .imagenUnica {
-    height: 100%;
-    width: 50%;
+    height: 11rem;
+    width: 11rem;
 }
+
+

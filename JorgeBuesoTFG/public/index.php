@@ -11,6 +11,7 @@ use App\Controller\AccesorioController;
 use App\Controller\UsuarioController;
 use App\Controller\BlogController;
 use App\Controller\CestaController;
+use App\Controller\PersonalController;
 
 
 /*
@@ -61,6 +62,8 @@ function controlador($nombre = null)
             return new BlogController;
         case"cesta":
             return new CestaController;
+        case"personal":
+            return new PersonalController;
     }
 
 }
@@ -98,6 +101,14 @@ switch ($ruta) {
         controlador()->accesorio(str_replace("accesorio/", "", $ruta));
         break;
 
+    ///////////////////////////////////////PERSONAL//////////////////////////////////////////////////
+    case"admin/personal":
+        controlador()->personal();
+        break;
+
+    case"pedirpersonal":
+        controlador("personal")->pedirPersonal();
+        break;
 
 ////////////////////////////////////// BLOG Y CESTA/////////////////////////////////////////////
     case"":
@@ -106,15 +117,15 @@ switch ($ruta) {
         break;
 
     case"cesta":
-        controlador("cesta")->cesta(str_replace("cesta/", "", $ruta));
+        controlador("cesta")->cesta();
         break;
 
     case"AnadirCesta":
         controlador("cesta")->AnadirAlaCesta(str_replace("cesta/", "", $ruta));
         break;
 
-    case (strpos($ruta, "borrarCesta") === 0):
-        controlador("cesta")->borrar(str_replace("borrarCesta", "", $ruta));
+    case (strpos($ruta, "admin/cesta/borrar/") === 0):
+        controlador("cesta")->borrar(str_replace("admin/cesta/borrar/", "", $ruta));
         break;
 ////////////////////////////////////// PARTE ADMIN/////////////////////////////////////////////
 
@@ -129,7 +140,6 @@ switch ($ruta) {
     case"admin/accesorios/index":
         controlador("usuarios")->admin();
         break;
-
 
     case "admin/salir":
         controlador("usuarios")->salir();
@@ -188,7 +198,9 @@ switch ($ruta) {
     case (strpos($ruta,"admin/accesorios/editar/") === 0):
         controlador("accesorios")->editar(str_replace("admin/accesorios/editar/","",$ruta));
         break;
-
+    case (strpos($ruta, "admin/accesorios/borrar/") === 0):
+        controlador("accesorios")->borrarAccesorio(str_replace("admin/accesorios/borrar/", "", $ruta));
+        break;
 
     //Resto de rutas
     default:

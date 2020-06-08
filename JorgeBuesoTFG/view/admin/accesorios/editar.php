@@ -62,6 +62,12 @@
                                    value="<?php echo $datos->precio ?>">
                         </div>
 
+                        <div class="input-field col">
+                            <h9> Entradilla:</h9>
+                            <textarea id="texto" class="materialize-textarea" placeholder="Entradilla"
+                                      name="texto"><?php echo $datos->entradilla ?></textarea>
+
+                        </div>
 
                         <div class="input-field col">
                             <h9> Características:</h9>

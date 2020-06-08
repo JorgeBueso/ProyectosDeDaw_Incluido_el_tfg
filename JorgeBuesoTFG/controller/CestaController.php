@@ -4,11 +4,8 @@
 namespace App\Controller;
 
 use App\Model\Cesta;
-use App\Model\Accesorio;
-use App\Model\Usuario;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
-use mysql_xdevapi\Executable;
 
 class CestaController
 {
@@ -43,29 +40,25 @@ class CestaController
         $this->view->vista("admin", "cesta", $cesta);
     }
 
-    public function borrar($id){
-
+    public function borrar($id_cesta){
 
         //Borro el usuario
-        $consulta = $this->db->exec("DELETE FROM cesta WHERE id='$id'");
+        $consulta = $this->db->exec("DELETE FROM cesta WHERE id_cesta='$id_cesta'");
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/cesta","green","El usuario se ha borrado correctamente.") :
-            $this->view->redireccionConMensaje("admin/cesta","red","Hubo un error al guardar en la base de datos.");
-
+            $this->view->redireccionConMensaje("admin/accesorios/index","green","El usuario se ha borrado correctamente.") :
+            $this->view->redireccionConMensaje("admin/accesorios/index","red","Hubo un error al guardar en la base de datos.");
     }
 
-    public function AnadirAlaCesta($slug)
+    public function AnadirAlaCesta()
     {
         $nombreUsuario = $_SESSION['usuario'];
 
        $sql = $this->db->query("INSERT INTO cesta(usuario_id,id_accesorio,cantidad) VALUES((SELECT id FROM usuarios WHERE usuario='$nombreUsuario'),
 '8','123')");
 
-
         $this->view->vista("admin", "cesta");
-
 
     }
 

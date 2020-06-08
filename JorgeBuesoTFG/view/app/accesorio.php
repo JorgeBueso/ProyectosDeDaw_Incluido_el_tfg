@@ -1,8 +1,8 @@
 <div id="ContenidoFicha" class="w3-row-padding">
-    <article class="w3-col s4">
+    <article>
         <h1><?php
             echo $datos->nombre ?></h1>
-        <div class="w3-row-padding ">
+        <div class="ContenidoCarta w3-row-padding ">
             <div class="AccesorioimagenParticular">
                 <img class="imagenUnica" src="<?php echo $_SESSION['public'] . "img/" . $datos->imagen ?>"
                      alt="<?php echo $datos->modelo ?>">
@@ -15,6 +15,10 @@
 
                 </div>
             </div>
+            <a href="<?php echo $_SESSION['home']?>admin" target="_blank"
+               type="button" class="btn btn-outline-light">
+                Inicio de sesion
+            </a>
         </div>
     </article>
 </div>

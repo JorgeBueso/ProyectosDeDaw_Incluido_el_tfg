@@ -1,69 +1,3 @@
-<!--<div id="ContenidoFicha" class="w3-row-padding">-->
-<!--    <article class="w3-col s">-->
-<!--        <h1>el nombre</h1>-->
-<!--        <div class="w3-row-padding ">-->
-<!--            <div class="AccesorioimagenParticular">-->
-<!--                <img class="imagenUnica" src="../../public/img/baston-cuatro-apoyos.jpg"-->
-<!--                     alt="la imagen">-->
-<!--            </div>-->
-<!--            <div class="card-stacked">-->
-<!--                <div class="card-content">-->
-<!--                    <p>nombre</p>-->
-<!--                    <p>las carateristicas</p>-->
-<!--                    <br>-->
-<!---->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </article>-->
-<!--</div>-->
-<!--<div id="ContenidoFicha" class="w3-row-padding">-->
-<!---->
-<!--    <article>-->
-<!--        cesta-->
-<!--        --><?php
-//        $n=0;
-//        foreach ($datos as $row) {
-////            $n= $n + 1;
-////            echo $n;
-////            ?>
-<!--            <h1>usuario_id:--><?php
-//                echo $datos->usuario_id  ?><!--</h1>-->
-<!--            <h1>id_accesorio: --><?php
-//                echo $datos->id_accesorio  ?><!--</h1>-->
-<!---->
-<!---->
-<!--        --><?php //} ?>
-<!---->
-<!--    </article>-->
-<!---->
-<!--</div>-->
-
-<!--<div class="container" style="width:500px;">-->
-<!---->
-<!--    <div class="table-responsive">-->
-<!--        <table class="table table-striped" style="color:white">-->
-<!---->
-<!--            --><?php //foreach ($datos as $row) { ?>
-<!--                <tr>-->
-<!--                    <td>--><?php //echo $_SESSION['usuario'] ?><!--</td>-->
-<!--                    <td>--><?php //echo $datos->usuario_id ?><!--</td>-->
-<!--                    <td>--><?php //echo $datos->id_accesorio ?><!--</td>-->
-<!---->
-<!---->
-<!--                </tr>-->
-<!--                --><?php
-//            }
-//
-//
-//            ?>
-<!--        </table>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-
-
 <?php
 $nombreUsuario = $_SESSION['usuario'];
 $connect = mysqli_connect("localhost", "root", "root", "tfg_bbdd");
@@ -73,7 +7,7 @@ $result = mysqli_query($connect, $sql);
 ?>
 
 <br />
-<div class="container" style="width:500px; background: cornsilk">
+<div class="container" style="background: cornsilk">
     <h3 align="">Cesta de:<?php echo ' '.$nombreUsuario ?> </h3><br />
     <div class="table-responsive">
         <table class="table table-striped">
@@ -92,13 +26,13 @@ $result = mysqli_query($connect, $sql);
                     ?>
                     <tr>
                         <td>
-                            <img src="<?php echo $_SESSION['public'] . "img/" . $row["nombre"] ?>"
+                            <img src="<?php echo $_SESSION['public'] . "img/" . $row["imagen"] ?>"
                                  alt="<?php echo "imagen de ".$row["nombre"]?>">
                         </td>
                         <td><?php echo $row["nombre"];?></td>
                         <td><?php echo $row["cantidad"]; ?></td>
                         <td><?php echo $row["precio"]; ?></td>
-                       <td><a href="<?php echo $_SESSION['home']."borrarCesta".$row["id"] ?>">borrar</a></td>
+                       <td><a href="<?php echo $_SESSION['home']."admin/cesta/borrar/".$row["id_cesta"]?>">borrar</a></td>
                     </tr>
 
                     <?php

@@ -120,13 +120,14 @@ switch ($ruta) {
         controlador("cesta")->cesta();
         break;
 
-    case"AnadirCesta":
-        controlador("cesta")->AnadirAlaCesta(str_replace("cesta/", "", $ruta));
+    case(strpos($ruta, "AnadirCesta") === 0):
+        controlador("cesta")->AnadirAlaCesta(str_replace("AnadirCesta", "", $ruta));
         break;
 
     case (strpos($ruta, "admin/cesta/borrar/") === 0):
         controlador("cesta")->borrar(str_replace("admin/cesta/borrar/", "", $ruta));
         break;
+
 ////////////////////////////////////// PARTE ADMIN/////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////USUARIOS//////////////////////////////////////////////////
@@ -148,9 +149,16 @@ switch ($ruta) {
     case "admin/usuarios":
         controlador("usuarios")->indexUsuarios();
         break;
+
+        /*//////////////////////////////////////REGISTRO POR PARTE DEL USUARIO/////////////////////*/
     case "admin/usuarios/registrar":
-        controlador("usuarios")->crearUsuario();
+        controlador("usuarios")->crearParaRegistro();
         break;
+    case (strpos($ruta,"admin/usuarios/editar/") === 0):
+        controlador("usuarios")->registroDeUusarios(str_replace("admin/usuarios/editar/","",$ruta));
+        break;
+
+    /*//////////////////////////////////////REGISTRO POR PARTE DEL ADMIN/////////////////////*/
     case "admin/usuarios/crear":
         controlador("usuarios")->crearUsuarioConAdmin();
         break;

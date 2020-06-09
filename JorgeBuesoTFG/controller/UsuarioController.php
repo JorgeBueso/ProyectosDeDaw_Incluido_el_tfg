@@ -101,7 +101,7 @@ class UsuarioController
         $this->view->redireccionConMensaje("admin", "black", "Te has desconectado con éxito.");
     }
 
-    public function crear()
+    public function crearParaRegistro()
     {
 
         //Creo un nuevo usuario vacío
@@ -109,6 +109,43 @@ class UsuarioController
 
         //Llamo a la ventana de edición
         $this->view->vista("admin","usuarios/registrar", $usuario);
+
+    }
+
+    public function registroDeUusarios($id){
+
+
+        //Si ha pulsado el botón de guardar
+        if (isset($_POST["guardar"])){
+
+            //Recupero los datos del formulario
+            $usuario = filter_input(INPUT_POST, "usuario", FILTER_SANITIZE_STRING);
+            $clave = filter_input(INPUT_POST, "clave", FILTER_SANITIZE_STRING);
+
+
+            //Encripto la clave
+            $clave_encriptada = ($clave) ? password_hash($clave,  PASSWORD_BCRYPT, ['cost'=>12]) : "";
+
+                //Creo un nuevo usuario
+                $this->db->exec("INSERT INTO usuarios (usuario, clave) VALUES ('$usuario','$clave_encriptada')");
+
+                //Mensaje y redirección
+                $this->view->redireccionConMensaje("admin/entrar","black","El usuario <strong>$usuario</strong> se creado correctamente.");
+
+
+        }
+
+        //Si no, obtengo usuario y muestro la ventana de edición
+        else{
+
+            //Obtengo el usuario
+            $rowset = $this->db->query("SELECT * FROM usuarios WHERE id='$id' LIMIT 1");
+            $row = $rowset->fetch(\PDO::FETCH_OBJ);
+            $usuario = new Usuario($row);
+
+            //Llamo a la ventana de edición
+            $this->view->vista("admin","usuarios/editar", $usuario);
+        }
 
     }
 
@@ -179,16 +216,6 @@ class UsuarioController
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
             $this->view->redireccionConMensaje("admin/usuarios","green","El usuario se ha borrado correctamente.") :
             $this->view->redireccionConMensaje("admin/usuarios","red","Hubo un error al guardar en la base de datos.");
-
-    }
-
-    public function crearUsuario(){
-
-        //Creo un nuevo usuario vacío
-        $usuario = new Usuario();
-
-        //Llamo a la ventana de edición
-        $this->view->vista("admin","usuarios/editar", $usuario);
 
     }
 

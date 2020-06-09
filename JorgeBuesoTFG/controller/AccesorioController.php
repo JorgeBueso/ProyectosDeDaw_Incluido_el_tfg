@@ -252,16 +252,14 @@ class AccesorioController
 
     public function borrarAccesorio($id){
 
-        //Permisos
-        $this->view->permisos("accesorios");
-
         //Borro el usuario
         $consulta = $this->db->exec("DELETE FROM accesorios WHERE id='$id'");
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/acccesorios","green","El usuario se ha borrado correctamente.") :
-            $this->view->redireccionConMensaje("admin/accesorios","red","Hubo un error al guardar en la base de datos.");
+            $this->view->redireccionConMensaje("admin/accesorios/index","green","El usuario se ha borrado correctamente.") :
+            $this->view->redireccionConMensaje("admin/blog","red","Hubo un error al guardar en la base de datos.");
+
     }
 
 

@@ -7,7 +7,7 @@ class ViewHelper
     function vista($carpeta, $archivo, $datos = null)
     {
         
-        if ($carpeta == "admin" && $archivo == "usuarios/entrar" || $archivo=="usuarios/editar") {
+        if ($carpeta == "admin" && $archivo == "usuarios/entrar" || $archivo=="usuarios/registrar") {
             require("../view/$carpeta/$archivo.php");
 
         } else {

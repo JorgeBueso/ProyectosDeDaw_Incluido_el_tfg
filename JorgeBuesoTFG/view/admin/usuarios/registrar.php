@@ -1,4 +1,23 @@
-<div class="RegistroUsuarios">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inicio de sesión / Registro</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!--    CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/admin.css">
+
+</head>
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="col-md-6 RegistroUsuarios">
+            <div class="d-flex justify-content-center">
+                <div class="ContenedorImagenRegisto">
+                    <img src="<?php $_SESSION['public']?>../img/logotipoModificado.png" class="brand_logo" alt="Logo">
+                </div>
+            </div>
     <h3>
         <?php if ($datos->id){ ?>
             <strong class="nombreUsuarioEditar">Editar <?php echo $datos->usuario ?></strong>
@@ -32,4 +51,9 @@
 
         </div>
     </form>
+        </div>
+
+
+    </div>
 </div>
+

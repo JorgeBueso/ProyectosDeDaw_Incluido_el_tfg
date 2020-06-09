@@ -17,20 +17,7 @@
 </head>
 
 <body>
-<!--<script>-->
-<!--    window.onscroll = function() {myFunction()};-->
-<!---->
-<!--    var header = document.getElementsByName('header');-->
-<!--    var sticky = header.offsetTop;-->
-<!---->
-<!--    function myFunction() {-->
-<!--        if (window.pageYOffset > sticky) {-->
-<!--            header.classList.add("sticky");-->
-<!--        } else {-->
-<!--            header.classList.remove("sticky");-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+
 <header>
 <!--    IAGEN LOGOTIPO-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

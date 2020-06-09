@@ -22,7 +22,7 @@
 
                         <a href="<?php echo $_SESSION['home'] . "accesorioAdmin/" . $row->slug ?>" class="btn btn-primary">Detalles</a>
 
-                        <a href="<?php echo $_SESSION['home']."AnadirCesta" ?>" class="btn btn-primary">Añadir a la cesta</a>
+                        <a href="<?php echo $_SESSION['home']."AnadirCesta".$row->id ?>" class="btn btn-primary">Añadir a la cesta</a>
 
 
                 </div>

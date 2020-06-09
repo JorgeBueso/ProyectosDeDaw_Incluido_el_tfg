@@ -92,7 +92,6 @@ article div.ContenidoCarta {
     padding: 3rem;
 }
 
-
 .AccesorioimagenParticular {
     width: 30%;
     height: 40%;
@@ -116,17 +115,37 @@ article div.ContenidoCarta {
 /*/////////////////////////REGISTRO DE USUARIOS///////////////////*/
 
 .RegistroUsuarios{
-    margin-top: 5%;
-    margin-bottom: 5%;
+
+    color: slategray;
+    margin-top: 5rem;
     padding: 9%;
     background:#282726;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
+
 .RegistroUsuarios h3{
     text-align: center;
     margin-top: auto;
     margin-bottom:12%;
     color:#fff;
+}
+
+.ContenedorImagenRegisto {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #706fd3;
+    padding: 10px;
+    text-align: center;
+}
+
+.logoRegistro {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
 /********************************************************************FOOTER********************************************/
@@ -151,6 +170,7 @@ footer {
     color: white;
 }
 .login-form-1{
+    color: slategray;
     margin-top: 10rem;
     padding: 9%;
     background:#282726;
@@ -172,6 +192,7 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
 .brand_logo {
     height: 150px;
     width: 150px;

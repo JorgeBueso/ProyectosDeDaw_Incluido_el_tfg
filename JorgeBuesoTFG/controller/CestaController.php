@@ -51,14 +51,14 @@ class CestaController
             $this->view->redireccionConMensaje("admin/accesorios/index","red","Hubo un error al guardar en la base de datos.");
     }
 
-    public function AnadirAlaCesta()
+    public function AnadirAlaCesta($id_accesorio)
     {
         $nombreUsuario = $_SESSION['usuario'];
 
-       $sql = $this->db->query("INSERT INTO cesta(usuario_id,id_accesorio,cantidad) VALUES((SELECT id FROM usuarios WHERE usuario='$nombreUsuario'),
-'8','123')");
+       $consulta = $this->db->query("INSERT INTO cesta (usuario_id,id_accesorio,cantidad) VALUES((SELECT id FROM usuarios WHERE usuario='$nombreUsuario'),
+'$id_accesorio','123')");
 
-        $this->view->vista("admin", "cesta");
+        $this->view->vista("admin", "cesta",$consulta);
 
     }
 
